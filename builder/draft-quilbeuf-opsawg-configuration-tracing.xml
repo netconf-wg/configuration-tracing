@@ -91,7 +91,7 @@
     <note removeInRFC="true">
       <name>Discussion Venues</name>
       <t>Source for this draft and an issue tracker can be found at
-       <eref target="https://github.com/netconf-wg/configuration-tracing"/>.</t>
+       <eref target="https://github.com/JeanQuilbeufHuawei/draft-quilbeuf-opsawg-configuration-tracing"/>.</t>
     </note>
   </front>
   <middle>
@@ -221,6 +221,11 @@
             <xref target="I-D.rogaglia-netconf-trace-ctx-extension"/> defines a NETCONF extension providing the trace context from <xref target="W3C-Trace-Context"/>.
             Using this mechanism, the NETCONF server captures the trace-id, when available, and maps it to a local commit ID, by populating the YANG module.
         </t>
+        <t>
+          The trace context from W3C provides a parent-id. This parent-id does not identify a particular server or NMS but rather one request in the chain of HTTP requests constituting the trace.
+          Similarly to the passing of the trace context in <xref target="I-D.rogaglia-netconf-trace-ctx-extension"/>, we propose an new annotation on the NETCONF messages to pass the client-id.
+          This annotation is defined in the YANG module from <xref target="yang-module"/>.
+        </t>
         <figure anchor="hierarchical-configuration" >
           <name>Example of Hierarchical Configuration. tx: transaction. tr: trace.</name>
           <artwork><![CDATA[
@@ -240,47 +245,13 @@
             ]]>
           </artwork>
         </figure>
-        <!--
         <t>
-          A server considers as a Parent Transaction a transaction that modifies its configuration.
-          On <xref target="hierarchical-configuration"/>, tx-1 is a Parent Transaction for the Controller.
+          In <xref target="hierarchical-configuration"/>, the transactions 'tx-1', 'tx-2' and 'tx-3' are sent via NETCONF.
+          The NETCONF RPC used, most likely 'commit' in our use case, is annotated with the 'traceparent' annotation as defined in <xref target="I-D.rogaglia-netconf-trace-ctx-extension"/>.
+          The traceparent annotation has the same trace id 'tr-1' for each of these transactions.
+          Additionally, for each transaction the client id is passed via the 'client-id' annotation.
+          For 'tx-1' the client-id is the id of the Orchestrator. For 'tx-2' and 'tx-3', the client is the id of the Controller.
         </t>
-        <t>
-          A client considers as a Child Transaction the modification of a server configuration.
-          On <xref target="hierarchical-configuration"/>, tx-2 and tx-3 are Child Transactions for the Controller.
-        </t>
-        <t>
-          If the set-tx-id feature is enabled (see open issue in <xref target="set-tx-id"/>), the client can specify its own transaction ID when sending the configuration ID for the server.
-          In that case, the Controller in <xref target="hierarchical-configuration"/> could use the same transaction-id for both tx-2 and tx-3 and save a single Child Transaction ID for that commit.
-          Otherwise, the server is the one generating the ID for the transaction between the client and the server.
-          If the client has to configure several servers, for instance to enable a network service, then each of the configured servers might return a different ID.
-          Therefore, for a configuration modification on the client might be implemented via several Child Transactions and thus might have several Child Transaction IDs.
-        </t>
-        <t>
-          Our proposed solution is to store, on the server, a mapping between the existing local commit id and the Parent and Child Transactions related to that local configuration change.
-          The mapping is read only and populated by the server at configuration time as follows:
-        </t>
-        <ul>
-          <li>
-            Parent Transaction:
-            If the set-tx-id feature is available (see <xref target="set-tx-id"/>), the server MUST accept a transaction-ID and a client ID from client supporting configuration tracing.
-            The server MUST store both entries as respectively Parent Transaction ID and Client ID, associated to the local configuration ID.
-            If the set-tx-id feature is not available, the server MUST accept the client ID, generate a transaction ID, save both the transaction ID as Parent Transaction ID and the Client ID as Client ID, and send back the transaction ID to the client.
-            If the client does not support configuration tracing, none of these entries are populated.
-            In <xref target="hierarchical-configuration"/>, for the Controller, the Parent Transaction ID is the ID of tx-1.
-          </li>
-          <li>
-            Child Transaction:
-            If the set-tx-id feature is available (see <xref target="set-tx-id"/>), when a client has to configure servers in response to a local configuration change, then it MUST generate a Transaction ID, send it along with its ID to the configured servers, and save it as a Child Transaction ID.
-            If the set-tx-id feature is not available, it MUST sent its own ID with the configuration, receive back the transaction ID from each server, and save all of them as Child Transaction ID.
-            In <xref target="hierarchical-configuration"/>, for the Controller, the Child Transaction IDs are the IDs of tx-2 and tx-3.
-          </li>
-        </ul>
-        <t>
-          The two cases above are not mutually exclusive. A Controller can be configured by an Orchestrator and configure network equipment in turn, as shown in <xref target="hierarchical-configuration"/>.
-          In that case, both the Parent Transaction ID, shared with the Orchestrator and the Child Transaction IDs, shared with the network equipments, are stored in the Controller.
-          They are both associated to the corresponding configuration commit in the Controller.
-        </t>  -->
         <t>
           It is technically possible that several clients push configuration to the candidate configuration datastore  and only one of them commits the changes to the running configuration datastore.
           From the running configuration datastore perspective, which is the effective one, there is a single modification, but caused by several clients, which means that this modification should have several corresponding client-ids.
@@ -389,6 +360,9 @@
           For instance, a configuration modification pushed via CLI can be identified via a label, which could contain the trace-parent.
           As such cases are difficult to standardize, we won’t cover them in this document.
         </t>
+        <t>
+          Finally, the client-id is passed via the 'client-id' annotation defined in the YANG module.
+        </t>
       </section>
       
       <section anchor="module-code" >
@@ -415,12 +389,7 @@
       <name>Open Issues / TODO</name>
       <ul>
         <li>
-          Indicate what to do with O-RAN apps, since each of them might be seen as a different client with a different client-id.
-          This is actually a requirement that the client-id should be granular enough to distinguish between different controllers colocated on the same device.
-          For instance, the IP address might not be a suitable client-id in that case.
-        </li>
-        <li>
-          Define how to pass the client-id. Current leads are the trace-state from <xref target="W3C-Trace-Context"/> and <eref target="https://www.w3.org/TR/baggage/">W3C Baggage</eref>.
+          Is the custom annotation the right mechanism for passing the client-id?
         </li>
         <li>
           The model and usage presented here focuses of the problem of tracing a configuration change back to its sources.
@@ -458,6 +427,14 @@
     <section>
       <name>Changes between revisions</name>
       <t>
+        00(WG adoption) -> 01
+      </t>
+      <ul>
+        <li>
+          Define mechanism to pass the client-id.
+        </li>
+      </ul>
+      <t>
         01 -> 02
       </t>
       <ul>
@@ -472,14 +449,33 @@
         <li> Feedback from Med, both in text and YANG module</li>
       </ul>
     </section>
-    <section anchor="usage">
-      <name>Tracing configuration changes</name>
+    <section anchor="commit-example">
+      <name>Example of NETCONF message</name>
+      <figure anchor="netconf-commit">
+        <name>Example of NETCONF commit RPC with annotations</name>
+        <artwork><![CDATA[
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="1"
+     xmlns:w3ctc="urn:ietf:params:xml:ns:netconf:w3ctc:1.0"
+     xmlns:ext-txid="urn:ietf:params:xml:ns:yang:ietf-external-transaction-id"
+     w3ctc:traceparent=
+       "00-4bf92f3577b34da6a3ce929d0e0e4736-00f067aa0ba902b7-01"
+     ext-txid:client-id="controller-01">
+  <commit/>
+</rpc>
+        ]]>
+        </artwork>
+      </figure>
+      <t>
+        In <xref target="netconf-commit"/>, we present a RPC annotated with the traceparent and the client-id.
+        The traceparent example is taken from <xref target="I-D.rogaglia-netconf-trace-ctx-extension"/>.
+        The client-id annotation is defined in our YANG module. Here the client-id passed is 'controller-01'.
+      </t>
     </section>
     <section numbered="false">
       <name>Acknowledgements</name>
-        <t>
-           The authors would like to thank Mohamed Boucadair, Jan Linblad and Roque Gagliano for their reviews and propositions.
-        </t>
+      <t>
+        The authors would like to thank Mohamed Boucadair, Jan Linblad and Roque Gagliano for their reviews and propositions.
+      </t>
     </section>
   </back>
 </rfc>

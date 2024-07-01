@@ -5,13 +5,13 @@
 OPSAWG                                                       J. Quilbeuf
 Internet-Draft                                                 B. Claise
 Intended status: Standards Track                                  Huawei
-Expires: 1 September 2024                                        T. Graf
+Expires: 2 January 2025                                          T. Graf
                                                                 Swisscom
                                                                 D. Lopez
                                                           Telefonica I+D
                                                                   Q. Sun
                                                            China Telecom
-                                                        29 February 2024
+                                                             1 July 2024
 
 
               External Trace ID for Configuration Tracing
@@ -44,19 +44,24 @@ Discussion Venues
    This note is to be removed before publishing as an RFC.
 
    Source for this draft and an issue tracker can be found at
-   https://github.com/netconf-wg/configuration-tracing.
+   https://github.com/JeanQuilbeufHuawei/draft-quilbeuf-opsawg-
+   configuration-tracing.
+
+
+
+
+
+
+
+Quilbeuf, et al.         Expires 2 January 2025                 [Page 1]
+
+Internet-Draft     Configuration Tracing via trace-id          July 2024
+
 
 Status of This Memo
 
    This Internet-Draft is submitted in full conformance with the
    provisions of BCP 78 and BCP 79.
-
-
-
-Quilbeuf, et al.        Expires 1 September 2024                [Page 1]
-
-Internet-Draft     Configuration Tracing via trace-id      February 2024
-
 
    Internet-Drafts are working documents of the Internet Engineering
    Task Force (IETF).  Note that other groups may also distribute
@@ -68,7 +73,7 @@ Internet-Draft     Configuration Tracing via trace-id      February 2024
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 1 September 2024.
+   This Internet-Draft will expire on 2 January 2025.
 
 Copyright Notice
 
@@ -89,37 +94,37 @@ Table of Contents
    1.  Introduction  . . . . . . . . . . . . . . . . . . . . . . . .   3
    2.  Terminology . . . . . . . . . . . . . . . . . . . . . . . . .   4
    3.  Use cases . . . . . . . . . . . . . . . . . . . . . . . . . .   4
-     3.1.  Configuration Mistakes  . . . . . . . . . . . . . . . . .   4
+     3.1.  Configuration Mistakes  . . . . . . . . . . . . . . . . .   5
      3.2.  Concurrent NMS Configuration  . . . . . . . . . . . . . .   5
      3.3.  Conflicting Intents . . . . . . . . . . . . . . . . . . .   5
      3.4.  Not a use case: Onboarding  . . . . . . . . . . . . . . .   5
    4.  Relying on W3C Trace Context to Trace Configuration
            Modifications . . . . . . . . . . . . . . . . . . . . . .   5
-     4.1.  Existing configuration metadata on device . . . . . . . .   5
+     4.1.  Existing configuration metadata on device . . . . . . . .   6
      4.2.  Client ID . . . . . . . . . . . . . . . . . . . . . . . .   6
      4.3.  Instantiating the YANG module . . . . . . . . . . . . . .   6
      4.4.  Using the YANG module . . . . . . . . . . . . . . . . . .   7
-   5.  YANG module . . . . . . . . . . . . . . . . . . . . . . . . .   8
-     5.1.  Overview  . . . . . . . . . . . . . . . . . . . . . . . .   8
-     5.2.  YANG module ietf-external-transaction-id  . . . . . . . .   9
-   6.  Security Considerations . . . . . . . . . . . . . . . . . . .  13
-   7.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .  13
-   8.  Contributors  . . . . . . . . . . . . . . . . . . . . . . . .  13
-   9.  Open Issues / TODO  . . . . . . . . . . . . . . . . . . . . .  13
+   5.  YANG module . . . . . . . . . . . . . . . . . . . . . . . . .   9
+     5.1.  Overview  . . . . . . . . . . . . . . . . . . . . . . . .   9
 
 
 
-Quilbeuf, et al.        Expires 1 September 2024                [Page 2]
+Quilbeuf, et al.         Expires 2 January 2025                 [Page 2]
 
-Internet-Draft     Configuration Tracing via trace-id      February 2024
+Internet-Draft     Configuration Tracing via trace-id          July 2024
 
 
-   10. Normative References  . . . . . . . . . . . . . . . . . . . .  13
-   11. Informative References  . . . . . . . . . . . . . . . . . . .  14
+     5.2.  YANG module ietf-external-transaction-id  . . . . . . . .  10
+   6.  Security Considerations . . . . . . . . . . . . . . . . . . .  14
+   7.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .  14
+   8.  Contributors  . . . . . . . . . . . . . . . . . . . . . . . .  14
+   9.  Open Issues / TODO  . . . . . . . . . . . . . . . . . . . . .  14
+   10. Normative References  . . . . . . . . . . . . . . . . . . . .  14
+   11. Informative References  . . . . . . . . . . . . . . . . . . .  15
    Appendix A.  Changes between revisions  . . . . . . . . . . . . .  15
-   Appendix B.  Tracing configuration changes  . . . . . . . . . . .  15
-   Acknowledgements  . . . . . . . . . . . . . . . . . . . . . . . .  15
-   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  15
+   Appendix B.  Example of NETCONF message . . . . . . . . . . . . .  16
+   Acknowledgements  . . . . . . . . . . . . . . . . . . . . . . . .  16
+   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  16
 
 1.  Introduction
 
@@ -158,18 +163,17 @@ Internet-Draft     Configuration Tracing via trace-id      February 2024
    the same user and some more correlations must be done to trace the
    problematic modification to its source.
 
+
+
+Quilbeuf, et al.         Expires 2 January 2025                 [Page 3]
+
+Internet-Draft     Configuration Tracing via trace-id          July 2024
+
+
    This document specifies a mechanism to automatically map the
    configuration modifications to their source, up to a specific NMS
    service request.  Practically, this mechanism annotates configuration
    changes on the configured element with sufficient information to
-
-
-
-Quilbeuf, et al.        Expires 1 September 2024                [Page 3]
-
-Internet-Draft     Configuration Tracing via trace-id      February 2024
-
-
    unambiguously identify the corresponding transaction, if any, on the
    element that requested the configuration modification.  It reuses the
    concept of Trace Context [W3C-Trace-Context] applied to NETCONF as in
@@ -210,6 +214,18 @@ Internet-Draft     Configuration Tracing via trace-id      February 2024
    or simply a customer issue.  Here are the use cases for the proposed
    YANG module.
 
+
+
+
+
+
+
+
+Quilbeuf, et al.         Expires 2 January 2025                 [Page 4]
+
+Internet-Draft     Configuration Tracing via trace-id          July 2024
+
+
 3.1.  Configuration Mistakes
 
    Taking into account that many network anomalies are due to
@@ -218,14 +234,6 @@ Internet-Draft     Configuration Tracing via trace-id      February 2024
    enabled client/NMS.  In such a case, we can map the offending
    configuration modification id on a server/NE to a local configuration
    modification id on the client/NMS.  Assuming that this mechanism (the
-
-
-
-Quilbeuf, et al.        Expires 1 September 2024                [Page 4]
-
-Internet-Draft     Configuration Tracing via trace-id      February 2024
-
-
    YANG module) is implemented on the controller, we can recursively
    find, in the orchestrator, the latest (set of of) service request(s)
    that triggered the configuration modification.  Whether this/those
@@ -262,6 +270,18 @@ Internet-Draft     Configuration Tracing via trace-id      February 2024
 
 4.  Relying on W3C Trace Context to Trace Configuration Modifications
 
+
+
+
+
+
+
+
+Quilbeuf, et al.         Expires 2 January 2025                 [Page 5]
+
+Internet-Draft     Configuration Tracing via trace-id          July 2024
+
+
 4.1.  Existing configuration metadata on device
 
    This document assumes that NETCONF clients or servers (orchestrators,
@@ -274,13 +294,6 @@ Internet-Draft     Configuration Tracing via trace-id      February 2024
    is a Local Commit ID, we assume that it exists on the platform.  This
    Local Commit ID is the link between the module presented in this
    draft and the device-specific way of storing configuration changes.
-
-
-
-Quilbeuf, et al.        Expires 1 September 2024                [Page 5]
-
-Internet-Draft     Configuration Tracing via trace-id      February 2024
-
 
 4.2.  Client ID
 
@@ -298,6 +311,32 @@ Internet-Draft     Configuration Tracing via trace-id      February 2024
    Using this mechanism, the NETCONF server captures the trace-id, when
    available, and maps it to a local commit ID, by populating the YANG
    module.
+
+   The trace context from W3C provides a parent-id.  This parent-id does
+   not identify a particular server or NMS but rather one request in the
+   chain of HTTP requests constituting the trace.  Similarly to the
+   passing of the trace context in
+   [I-D.rogaglia-netconf-trace-ctx-extension], we propose an new
+   annotation on the NETCONF messages to pass the client-id.  This
+   annotation is defined in the YANG module from Section 5.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Quilbeuf, et al.         Expires 2 January 2025                 [Page 6]
+
+Internet-Draft     Configuration Tracing via trace-id          July 2024
+
 
                             +---------------+
                             | Orchestrator  |
@@ -317,6 +356,16 @@ Internet-Draft     Configuration Tracing via trace-id      February 2024
      Figure 1: Example of Hierarchical Configuration. tx: transaction.
                                  tr: trace.
 
+   In Figure 1, the transactions 'tx-1', 'tx-2' and 'tx-3' are sent via
+   NETCONF.  The NETCONF RPC used, most likely 'commit' in our use case,
+   is annotated with the 'traceparent' annotation as defined in
+   [I-D.rogaglia-netconf-trace-ctx-extension].  The traceparent
+   annotation has the same trace id 'tr-1' for each of these
+   transactions.  Additionally, for each transaction the client id is
+   passed via the 'client-id' annotation.  For 'tx-1' the client-id is
+   the id of the Orchestrator.  For 'tx-2' and 'tx-3', the client is the
+   id of the Controller.
+
    It is technically possible that several clients push configuration to
    the candidate configuration datastore and only one of them commits
    the changes to the running configuration datastore.  From the running
@@ -328,16 +377,6 @@ Internet-Draft     Configuration Tracing via trace-id      February 2024
    assume that a given configuration modification on a server is caused
    by a single client, and thus has a single corresponding client-id.
 
-
-
-
-
-
-Quilbeuf, et al.        Expires 1 September 2024                [Page 6]
-
-Internet-Draft     Configuration Tracing via trace-id      February 2024
-
-
 4.4.  Using the YANG module
 
    The YANG module defined below enables tracing a configuration change
@@ -347,6 +386,13 @@ Internet-Draft     Configuration Tracing via trace-id      February 2024
    enabling read access to the YANG module for configuration tracing on
    that client.  It should as well have access to the network equipment
    in which an issue is detected.
+
+
+
+Quilbeuf, et al.         Expires 2 January 2025                 [Page 7]
+
+Internet-Draft     Configuration Tracing via trace-id          July 2024
+
 
                                                      +---------------+
         .----------------[5]match tr-1-------------->|               |
@@ -382,18 +428,6 @@ Internet-Draft     Configuration Tracing via trace-id      February 2024
        occurring before the issue was detected.  The ADS queries the NE
        for the trace id and client id associated to the commit-id.
 
-
-
-
-
-
-
-
-Quilbeuf, et al.        Expires 1 September 2024                [Page 7]
-
-Internet-Draft     Configuration Tracing via trace-id      February 2024
-
-
    2.  The ADS receives the trace-id and the client-id.  In Figure 2,
        that step would receive the trace-id tr-1 and the id of the
        Controller as a result.  If there is no associated client-id, the
@@ -404,6 +438,17 @@ Internet-Draft     Configuration Tracing via trace-id      February 2024
        the previous step, looking for a match of the trace-id from the
        previous step.  In Figure 2, for that step, the software would
        look for the trace-id tr-1 stored in the Controller.
+
+
+
+
+
+
+
+Quilbeuf, et al.         Expires 2 January 2025                 [Page 8]
+
+Internet-Draft     Configuration Tracing via trace-id          July 2024
+
 
    4.  From that query, the ADS knows the local-commit-id on the client
        (Controller in our case).  Since the local-commit-id is
@@ -434,22 +479,6 @@ Internet-Draft     Configuration Tracing via trace-id      February 2024
    The tree representation [RFC8340] of our YANG module is depicted in
    Figure 3
 
-
-
-
-
-
-
-
-
-
-
-
-Quilbeuf, et al.        Expires 1 September 2024                [Page 8]
-
-Internet-Draft     Configuration Tracing via trace-id      February 2024
-
-
    module: ietf-external-transaction-id
      +--ro external-transactions-id
         +--ro configuration-change* [local-commit-id]
@@ -469,6 +498,13 @@ Internet-Draft     Configuration Tracing via trace-id      February 2024
    The local-commit-id represents the local id of the configuration
    changes, which is device-specific.  It can be used to retrieve the
    local configuration changes that happened during that transaction.
+
+
+
+Quilbeuf, et al.         Expires 2 January 2025                 [Page 9]
+
+Internet-Draft     Configuration Tracing via trace-id          July 2024
+
 
    The trace-parent is present to identify the trace associated to the
    local-commit-id.  This trace-parent can be transmitted by a client or
@@ -490,6 +526,9 @@ Internet-Draft     Configuration Tracing via trace-id      February 2024
    could contain the trace-parent.  As such cases are difficult to
    standardize, we won’t cover them in this document.
 
+   Finally, the client-id is passed via the 'client-id' annotation
+   defined in the YANG module.
+
 5.2.  YANG module ietf-external-transaction-id
 
    <CODE BEGINS> file "ietf-external-transaction-id@2021-11-03.yang"
@@ -499,13 +538,11 @@ Internet-Draft     Configuration Tracing via trace-id      February 2024
        "urn:ietf:params:xml:ns:yang:ietf-external-transaction-id";
      prefix ext-txid;
 
-
-
-Quilbeuf, et al.        Expires 1 September 2024                [Page 9]
-
-Internet-Draft     Configuration Tracing via trace-id      February 2024
-
-
+     import ietf-yang-metadata {
+       prefix md;
+       reference
+         "RFC 7952: Defining and Using Metadata with YANG";
+     }
      import ietf-yang-types {
        prefix yang;
        reference
@@ -517,6 +554,14 @@ Internet-Draft     Configuration Tracing via trace-id      February 2024
      contact
        "WG Web:   <https://datatracker.ietf.org/wg/netconf/>
         WG List:  <mailto:netconf@ietf.org>
+
+
+
+Quilbeuf, et al.         Expires 2 January 2025                [Page 10]
+
+Internet-Draft     Configuration Tracing via trace-id          July 2024
+
+
         Author:   Benoit Claise  <mailto:benoit.claise@huawei.com>
         Author:   Jean Quilbeuf  <mailto:jean.quilbeuf@huawei.com>";
      description
@@ -554,14 +599,6 @@ Internet-Draft     Configuration Tracing via trace-id      February 2024
        type string {
          pattern '[0-9a-f]*';
        }
-
-
-
-Quilbeuf, et al.        Expires 1 September 2024               [Page 10]
-
-Internet-Draft     Configuration Tracing via trace-id      February 2024
-
-
        description
          "A string composed of hexadecimal digits. Digits represented by
           letters are restricted to lowercase so that a single
@@ -573,6 +610,14 @@ Internet-Draft     Configuration Tracing via trace-id      February 2024
      grouping trace-parent-g {
        description
          "Trace parent frow the W3C trace-context recommandation.
+
+
+
+Quilbeuf, et al.         Expires 2 January 2025                [Page 11]
+
+Internet-Draft     Configuration Tracing via trace-id          July 2024
+
+
           Follows the format version 00.";
        leaf version {
          type hex-digits {
@@ -610,15 +655,24 @@ Internet-Draft     Configuration Tracing via trace-id      February 2024
            "Flags enabled for this trace. See W3C reference for the
             details about flags.";
        }
-
-
-
-Quilbeuf, et al.        Expires 1 September 2024               [Page 11]
-
-Internet-Draft     Configuration Tracing via trace-id      February 2024
-
-
      }
+
+     md:annotation cilent-id {
+       type string;
+       description
+         "This annotation must be used in the NETCONF RPC nodes. It
+          contains the client-id identifying the client which is calling
+          the RPC. This value is used to populate the field client-id in
+          the configuration-change container";
+     }
+
+
+
+
+Quilbeuf, et al.         Expires 2 January 2025                [Page 12]
+
+Internet-Draft     Configuration Tracing via trace-id          July 2024
+
 
      container external-transactions-id {
        config false;
@@ -666,16 +720,16 @@ Internet-Draft     Configuration Tracing via trace-id      February 2024
 
               This data node is present only when the configuration was
               pushed by a compatible system.";
-
-
-
-Quilbeuf, et al.        Expires 1 September 2024               [Page 12]
-
-Internet-Draft     Configuration Tracing via trace-id      February 2024
-
-
          }
        }
+
+
+
+Quilbeuf, et al.         Expires 2 January 2025                [Page 13]
+
+Internet-Draft     Configuration Tracing via trace-id          July 2024
+
+
      }
    }
    <CODE ENDS>
@@ -690,16 +744,8 @@ Internet-Draft     Configuration Tracing via trace-id      February 2024
 
 9.  Open Issues / TODO
 
-   *  Indicate what to do with O-RAN apps, since each of them might be
-      seen as a different client with a different client-id.  This is
-      actually a requirement that the client-id should be granular
-      enough to distinguish between different controllers colocated on
-      the same device.  For instance, the IP address might not be a
-      suitable client-id in that case.
-
-   *  Define how to pass the client-id.  Current leads are the trace-
-      state from [W3C-Trace-Context] and W3C Baggage
-      (https://www.w3.org/TR/baggage/).
+   *  Is the custom annotation the right mechanism for passing the
+      client-id?
 
    *  The model and usage presented here focuses of the problem of
       tracing a configuration change back to its sources.  As it relies
@@ -720,16 +766,6 @@ Internet-Draft     Configuration Tracing via trace-id      February 2024
               <https://datatracker.ietf.org/doc/html/draft-ietf-netconf-
               transaction-id-01>.
 
-
-
-
-
-
-Quilbeuf, et al.        Expires 1 September 2024               [Page 13]
-
-Internet-Draft     Configuration Tracing via trace-id      February 2024
-
-
    [I-D.rogaglia-netconf-restconf-trace-ctx-headers]
               Gagliano, R., Larsson, K., and J. Lindblad, "RESTCONF
               Extension to support Trace Context Headers", Work in
@@ -742,6 +778,14 @@ Internet-Draft     Configuration Tracing via trace-id      February 2024
               Gagliano, R., Larsson, K., and J. Lindblad, "NETCONF
               Extension to support Trace Context propagation", Work in
               Progress, Internet-Draft, draft-rogaglia-netconf-trace-
+
+
+
+Quilbeuf, et al.         Expires 2 January 2025                [Page 14]
+
+Internet-Draft     Configuration Tracing via trace-id          July 2024
+
+
               ctx-extension-03, 6 July 2023,
               <https://datatracker.ietf.org/doc/html/draft-rogaglia-
               netconf-trace-ctx-extension-03>.
@@ -775,17 +819,6 @@ Internet-Draft     Configuration Tracing via trace-id      February 2024
               Protocol", RFC 8040, DOI 10.17487/RFC8040, January 2017,
               <https://www.rfc-editor.org/info/rfc8040>.
 
-
-
-
-
-
-
-Quilbeuf, et al.        Expires 1 September 2024               [Page 14]
-
-Internet-Draft     Configuration Tracing via trace-id      February 2024
-
-
    [RFC9417]  Claise, B., Quilbeuf, J., Lopez, D., Voyer, D., and T.
               Arumugam, "Service Assurance for Intent-Based Networking
               Architecture", RFC 9417, DOI 10.17487/RFC9417, July 2023,
@@ -793,10 +826,21 @@ Internet-Draft     Configuration Tracing via trace-id      February 2024
 
 Appendix A.  Changes between revisions
 
+   00(WG adoption) -> 01
+
+   *  Define mechanism to pass the client-id.
+
    01 -> 02
 
    *  Switch to trace-parent instead of transaction id for tracing
       configuration
+
+
+
+Quilbeuf, et al.         Expires 2 January 2025                [Page 15]
+
+Internet-Draft     Configuration Tracing via trace-id          July 2024
+
 
    00 -> 01
 
@@ -806,7 +850,25 @@ Appendix A.  Changes between revisions
 
    *  Feedback from Med, both in text and YANG module
 
-Appendix B.  Tracing configuration changes
+Appendix B.  Example of NETCONF message
+
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="1"
+     xmlns:w3ctc="urn:ietf:params:xml:ns:netconf:w3ctc:1.0"
+     xmlns:ext-txid="urn:ietf:params:xml:ns:yang:ietf-external-transaction-id"
+     w3ctc:traceparent=
+       "00-4bf92f3577b34da6a3ce929d0e0e4736-00f067aa0ba902b7-01"
+     ext-txid:client-id="controller-01">
+  <commit/>
+</rpc>
+
+
+       Figure 4: Example of NETCONF commit RPC with annotations
+
+   In Figure 4, we present a RPC annotated with the traceparent and the
+   client-id.  The traceparent example is taken from
+   [I-D.rogaglia-netconf-trace-ctx-extension].  The client-id annotation
+   is defined in our YANG module.  Here the client-id passed is
+   'controller-01'.
 
 Acknowledgements
 
@@ -825,21 +887,23 @@ Authors' Addresses
    Email: benoit.claise@huawei.com
 
 
+
+
+
+
+
+
+Quilbeuf, et al.         Expires 2 January 2025                [Page 16]
+
+Internet-Draft     Configuration Tracing via trace-id          July 2024
+
+
    Thomas Graf
    Swisscom
    Binzring 17
    CH-8045 Zurich
    Switzerland
    Email: thomas.graf@swisscom.com
-
-
-
-
-
-
-Quilbeuf, et al.        Expires 1 September 2024               [Page 15]
-
-Internet-Draft     Configuration Tracing via trace-id      February 2024
 
 
    Diego R. Lopez
@@ -885,12 +949,4 @@ Internet-Draft     Configuration Tracing via trace-id      February 2024
 
 
 
-
-
-
-
-
-
-
-
-Quilbeuf, et al.        Expires 1 September 2024               [Page 16]
+Quilbeuf, et al.         Expires 2 January 2025                [Page 17]

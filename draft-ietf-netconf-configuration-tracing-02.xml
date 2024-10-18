@@ -121,9 +121,10 @@
         This document specifies a mechanism to automatically map the configuration modifications to their source, up to a specific NMS service request.
         Practically, this mechanism annotates configuration changes on the configured element with sufficient information to unambiguously identify the corresponding transaction, if any,
         on the element that requested the configuration modification.
-        It reuses the concept of Trace Context <xref target="W3C-Trace-Context"/> applied to NETCONF as in <xref target="I-D.ietf-netconf-transaction-id"/>
+        It reuses the concept of Trace Context <xref target="W3C-Trace-Context"/> applied to NETCONF as in <xref target="I-D.rogaglia-netconf-trace-ctx-extension"/>
         The information needed to trace the configuration is stored in a new YANG module that maps a local configuration change to some additional metadata.
         The additional metadata contains the trace ID, and, if the local change is not the beginning of the trace, the ID of the client that triggered the local-change.
+        In that sense, it is an instance of the YANG DataStore implementation of the Trace Context as proposed in <xref target="I-D.rogaglia-netconf-trace-ctx-extension" section="1.2"/>.
       </t>
     </section>
     <section anchor="terminology">
@@ -158,7 +159,7 @@
         This document was written with autonomous networks in mind.
         We assume that an existing monitoring or assurance system, such as described in <xref target="RFC9417"/>, is able to detect and report network anomalies ,
         e.g. SLA violations, intent violations, network failure, or simply a customer issue.
-        Here are the use cases for the proposed YANG module.
+        Here are the use cases for the proposed YANG module; they are extensions of the "Provisioning root cause analysis" use case presented in <xref target="I-D.rogaglia-netconf-trace-ctx-extension" section="1.3.1"/>.
       </t>
         <section anchor="configuration-mistakes">
           <name>Configuration Mistakes</name>
@@ -223,8 +224,9 @@
         </t>
         <t>
           The trace context from W3C provides a parent-id. This parent-id does not identify a particular server or NMS but rather one request in the chain of HTTP requests constituting the trace.
-          Similarly to the passing of the trace context in <xref target="I-D.rogaglia-netconf-trace-ctx-extension"/>, we propose an new annotation on the NETCONF messages to pass the client-id.
-          This annotation is defined in the YANG module from <xref target="yang-module"/>.
+          Similarly to the passing of the trace context in <xref target="I-D.rogaglia-netconf-trace-ctx-extension"/>, we propose an XML attribute on NETCONF messages to pass the client-id.
+          The attribute name is "client-id" and the namespace is the namespace of the YANG module from <xref target="yang-module"/>, namely 'urn:ietf:params:xml:ns:yang:ietf-external-transaction-id'.
+          An example of a commit message including the client-id is shown in <xref target="netconf-commit"/>.
         </t>
         <figure anchor="hierarchical-configuration" >
           <name>Example of Hierarchical Configuration. tx: transaction. tr: trace.</name>
@@ -370,9 +372,6 @@ module: ietf-external-transaction-id
           For instance, a configuration modification pushed via CLI can be identified via a label, which could contain the trace-parent.
           As such cases are difficult to standardize, we won’t cover them in this document.
         </t>
-        <t>
-          Finally, the client-id is passed via the 'client-id' annotation defined in the YANG module.
-        </t>
       </section>
       
       <section anchor="module-code" >
@@ -384,11 +383,6 @@ module ietf-external-transaction-id {
     "urn:ietf:params:xml:ns:yang:ietf-external-transaction-id";
   prefix ext-txid;
 
-  import ietf-yang-metadata {
-    prefix md;
-    reference
-      "RFC 7952: Defining and Using Metadata with YANG";
-  }
   import ietf-yang-types {
     prefix yang;
     reference
@@ -485,15 +479,6 @@ module ietf-external-transaction-id {
         "Flags enabled for this trace. See W3C reference for the
          details about flags.";
     }
-  }
-
-  md:annotation cilent-id {
-    type string;
-    description
-      "This annotation must be used in the NETCONF RPC nodes. It
-       contains the client-id identifying the client which is calling
-       the RPC. This value is used to populate the field client-id in
-       the configuration-change container";
   }
 
   container external-transactions-id {
@@ -603,6 +588,18 @@ module ietf-external-transaction-id {
     <?rfc needLines="100"?>
     <section>
       <name>Changes between revisions</name>
+      <t>
+        01 -> 02
+      </t>
+      <ul>
+        <li>
+          Remove YANG specific annotation for the mechanism to pass the
+          client-id.
+        </li>
+        <li>
+          Align with NETCONF Trace context draft.
+        </li>
+      </ul>
       <t>
         00(WG adoption) -> 01
       </t>

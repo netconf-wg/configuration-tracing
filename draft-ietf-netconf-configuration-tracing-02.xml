@@ -82,7 +82,7 @@
         This document specifies a NETCONF mechanism to automatically map the configuration
         modifications to their source, up to a specific NMS change request.  Such a mechanism is required,
         in particular, for autonomous networks to trace the source of a particular
-        configuration change that led to an anomaly detection.  This mechanism facilitates the troubleshooting, the post mortem
+        configuration change that led to an anomaly detection.  This mechanism facilitates the troubleshooting, the post-mortem
         analysis, and in the end the closed loop automation required for
         self-healing networks.  The specification also includes a YANG module that is meant
         to map a local configuration change to the corresponding  trace id, up to the controller or even the orchestrator.
@@ -149,7 +149,7 @@
         <dt>Local Commit ID</dt>
         <dd>
           Identifier of a local configuration change on a Network Equipment, Controller, Orchestrator or any other device or software handling configuration.
-          Such an identifier is usually present in devices that can show an history of the configuration changes, to identify one such configuration change.
+          Such an identifier is usually present in devices that can show a history of the configuration changes, to identify one such configuration change.
         </dd>
       </dl>
     </section>
@@ -170,7 +170,7 @@
             Assuming that this mechanism (the YANG module) is implemented on the controller, we can recursively find, in the orchestrator,
             the latest (set of of) service request(s) that triggered the configuration modification.
             Whether this/those service request(s) are actually the root cause needs to be investigated.
-            However, they are a good starting point for troubleshooting, post mortem analysis, and in the end the closed loop automation, which is absolutely required for  for self-healing networks.
+            However, they are a good starting point for troubleshooting, post-mortem analysis, and in the end the closed loop automation, which is absolutely required for self-healing networks.
           </t>
         </section>
         <section anchor="concurrent-nms-configuration">
@@ -202,7 +202,7 @@
         <name>Existing configuration metadata on device</name>
         <t>
           This document assumes that NETCONF clients or servers (orchestrators, controllers, devices, ...) have some kind of mechanism to record the modifications done to the configuration.
-          For instance, devices typically have an history of configuration changes and this history associates a locally unique identifier to some metadata, such as the timestamp of the modification, the user doing the modification or the protocol used for the modification.
+          For instance, devices typically have a history of configuration changes and this history associates a locally unique identifier to some metadata, such as the timestamp of the modification, the user doing the modification or the protocol used for the modification.
           Such a locally unique identifier is a Local Commit ID, we assume that it exists on the platform.
           This Local Commit ID is the link between the module presented in this draft and the device-specific way of storing configuration changes.
         </t>
@@ -640,7 +640,7 @@ module ietf-external-transaction-id {
         </artwork>
       </figure>
       <t>
-        In <xref target="netconf-commit"/>, we present a RPC annotated with the traceparent and the client-id.
+        In <xref target="netconf-commit"/>, we present an RPC annotated with the traceparent and the client-id.
         The traceparent example is taken from <xref target="I-D.rogaglia-netconf-trace-ctx-extension"/>.
         The client-id annotation is defined in our YANG module. Here the client-id passed is 'controller-01'.
       </t>

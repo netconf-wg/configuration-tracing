@@ -719,9 +719,9 @@ Internet-Draft     Configuration Tracing via trace-id       October 2024
 
 9.  Open Issues / TODO
 
-   *  Is the custom annotation the right mechanism for passing the
-      client-id?
-
+   *  The model and usage presented here focuses of the problem of
+      tracing a configuration change back to its sources.  As it relies
+      on [W3C-Trace-Context], we could also use associated mechanisms
 
 
 
@@ -730,9 +730,6 @@ Quilbeuf, et al.          Expires 21 April 2025                [Page 13]
 Internet-Draft     Configuration Tracing via trace-id       October 2024
 
 
-   *  The model and usage presented here focuses of the problem of
-      tracing a configuration change back to its sources.  As it relies
-      on [W3C-Trace-Context], we could also use associated mechanisms
       for collecting and representing trace data such as OTLP.  For
       instance, we could define a YANG model matching the OTLP
       protobuffer definition (draft: https://github.com/rgaglian/ietf-
@@ -778,6 +775,9 @@ Internet-Draft     Configuration Tracing via trace-id       October 2024
    [RFC8174]  Leiba, B., "Ambiguity of Uppercase vs Lowercase in RFC
               2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
               May 2017, <https://www.rfc-editor.org/info/rfc8174>.
+
+
+
 
 
 

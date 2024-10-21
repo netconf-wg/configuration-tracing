@@ -109,7 +109,8 @@
       <t>
         This specification focuses only on configuration pushed via NETCONF <xref target="RFC6241"/> or RESTCONF <xref target="RFC8040"/>.
         The rationale for this choice is that NETCONF is better suited for normalization than other protocols (SNMP, CLI).
-        Another reason is that the notion of trace context, useful to track configuration modifications, has been ported to NETCONF in <xref target="I-D.rogaglia-netconf-trace-ctx-extension"/> and RESTCONF in <xref target="I-D.rogaglia-netconf-restconf-trace-ctx-headers"/>.
+        Another reason is that the notion of trace context, useful to track
+        configuration modifications, has been ported to NETCONF in <xref target="I-D.ietf-netconf-trace-ctx-extension"/> and RESTCONF in <xref target="I-D.ietf-netconf-restconf-trace-ctx-headers"/>.
       </t>
       <t>
         The same network element, or NETCONF <xref target="RFC6241"/> server, can be configured by different NMSs or NETCONF clients.
@@ -121,10 +122,10 @@
         This document specifies a mechanism to automatically map the configuration modifications to their source, up to a specific NMS service request.
         Practically, this mechanism annotates configuration changes on the configured element with sufficient information to unambiguously identify the corresponding transaction, if any,
         on the element that requested the configuration modification.
-        It reuses the concept of Trace Context <xref target="W3C-Trace-Context"/> applied to NETCONF as in <xref target="I-D.rogaglia-netconf-trace-ctx-extension"/>
+        It reuses the concept of Trace Context <xref target="W3C-Trace-Context"/> applied to NETCONF as in <xref target="I-D.ietf-netconf-trace-ctx-extension"/>
         The information needed to trace the configuration is stored in a new YANG module that maps a local configuration change to some additional metadata.
         The additional metadata contains the trace ID, and, if the local change is not the beginning of the trace, the ID of the client that triggered the local-change.
-        In that sense, it is an instance of the YANG DataStore implementation of the Trace Context as proposed in <xref target="I-D.rogaglia-netconf-trace-ctx-extension" section="1.2"/>.
+        In that sense, it is an instance of the YANG DataStore implementation of the Trace Context as proposed in <xref target="I-D.ietf-netconf-trace-ctx-extension" section="1.2"/>.
       </t>
     </section>
     <section anchor="terminology">
@@ -159,7 +160,7 @@
         This document was written with autonomous networks in mind.
         We assume that an existing monitoring or assurance system, such as described in <xref target="RFC9417"/>, is able to detect and report network anomalies ,
         e.g. SLA violations, intent violations, network failure, or simply a customer issue.
-        Here are the use cases for the proposed YANG module; they are extensions of the "Provisioning root cause analysis" use case presented in <xref target="I-D.rogaglia-netconf-trace-ctx-extension" section="1.3.1"/>.
+        Here are the use cases for the proposed YANG module; they are extensions of the "Provisioning root cause analysis" use case presented in <xref target="I-D.ietf-netconf-trace-ctx-extension" section="1.3.1"/>.
       </t>
         <section anchor="configuration-mistakes">
           <name>Configuration Mistakes</name>
@@ -219,12 +220,12 @@
       <section>
         <name>Instantiating the YANG module</name>
         <t>
-            <xref target="I-D.rogaglia-netconf-trace-ctx-extension"/> defines a NETCONF extension providing the trace context from <xref target="W3C-Trace-Context"/>.
+            <xref target="I-D.ietf-netconf-trace-ctx-extension"/> defines a NETCONF extension providing the trace context from <xref target="W3C-Trace-Context"/>.
             Using this mechanism, the NETCONF server captures the trace-id, when available, and maps it to a local commit ID, by populating the YANG module.
         </t>
         <t>
           The trace context from W3C provides a parent-id. This parent-id does not identify a particular server or NMS but rather one request in the chain of HTTP requests constituting the trace.
-          Similarly to the passing of the trace context in <xref target="I-D.rogaglia-netconf-trace-ctx-extension"/>, we propose an XML attribute on NETCONF messages to pass the client-id.
+          Similarly to the passing of the trace context in <xref target="I-D.ietf-netconf-trace-ctx-extension"/>, we propose an XML attribute on NETCONF messages to pass the client-id.
           The attribute name is "client-id" and the namespace is the namespace of the YANG module from <xref target="yang-module"/>, namely 'urn:ietf:params:xml:ns:yang:ietf-external-transaction-id'.
           An example of a commit message including the client-id is shown in <xref target="netconf-commit"/>.
         </t>
@@ -249,7 +250,7 @@
         </figure>
         <t>
           In <xref target="hierarchical-configuration"/>, the transactions 'tx-1', 'tx-2' and 'tx-3' are sent via NETCONF.
-          The NETCONF RPC used, most likely 'commit' in our use case, is annotated with the 'traceparent' annotation as defined in <xref target="I-D.rogaglia-netconf-trace-ctx-extension"/>.
+          The NETCONF RPC used, most likely 'commit' in our use case, is annotated with the 'traceparent' annotation as defined in <xref target="I-D.ietf-netconf-trace-ctx-extension"/>.
           The traceparent annotation has the same trace id 'tr-1' for each of these transactions.
           Additionally, for each transaction the client id is passed via the 'client-id' annotation.
           For 'tx-1' the client-id is the id of the Orchestrator. For 'tx-2' and 'tx-3', the client is the id of the Controller.
@@ -402,9 +403,9 @@
       <?rfc include="http://xml.resource.org/public/rfc/bibxml/reference.RFC.6241.xml"?>
       <?rfc include="http://xml.resource.org/public/rfc/bibxml/reference.RFC.8174.xml"?>
       <?rfc include="http://xml.resource.org/public/rfc/bibxml/reference.RFC.8340.xml"?>
-      <?rfc include="http://xml.resource.org/public/rfc/bibxml3/reference.I-D.draft-ietf-netconf-transaction-id-01.xml"?>
-      <?rfc include="http://xml.resource.org/public/rfc/bibxml3/reference.I-D.draft-rogaglia-netconf-trace-ctx-extension-03.xml"?>
-      <?rfc include="http://xml.resource.org/public/rfc/bibxml3/reference.I-D.draft-rogaglia-netconf-restconf-trace-ctx-headers-00.xml"?>
+      <?rfc include="http://xml.resource.org/public/rfc/bibxml3/reference.I-D.draft-ietf-netconf-transaction-id-07.xml"?>
+      <?rfc include="http://xml.resource.org/public/rfc/bibxml3/reference.I-D.ietf-netconf-trace-ctx-extension.xml"?>
+      <?rfc include="http://xml.resource.org/public/rfc/bibxml3/reference.I-D.ietf-netconf-restconf-trace-ctx-headers.xml"?>
       <reference anchor="W3C-Trace-Context" target="https://www.w3.org/TR/2021/REC-trace-context-1-20211123/">
         <front>
           <title>W3C Recommendation on Trace Context</title>
@@ -475,7 +476,7 @@
       </figure>
       <t>
         In <xref target="netconf-commit"/>, we present an RPC annotated with the traceparent and the client-id.
-        The traceparent example is taken from <xref target="I-D.rogaglia-netconf-trace-ctx-extension"/>.
+        The traceparent example is taken from <xref target="I-D.ietf-netconf-trace-ctx-extension"/>.
         The client-id annotation is defined in our YANG module. Here the client-id passed is 'controller-01'.
       </t>
     </section>

@@ -118,8 +118,8 @@ Internet-Draft     Configuration Tracing via trace-id      February 2025
    11. Informative References  . . . . . . . . . . . . . . . . . . .  16
    Appendix A.  Changes between revisions  . . . . . . . . . . . . .  16
    Appendix B.  Example of NETCONF message . . . . . . . . . . . . .  17
-   Acknowledgements  . . . . . . . . . . . . . . . . . . . . . . . .  17
-   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  17
+   Acknowledgements  . . . . . . . . . . . . . . . . . . . . . . . .  18
+   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  18
 
 1.  Introduction
 
@@ -773,11 +773,11 @@ Internet-Draft     Configuration Tracing via trace-id      February 2025
 
 9.  Open Issues / TODO
 
+   This section is to be removed before publishing as an RFC.
+
    *  The model and usage presented here focuses of the problem of
       tracing a configuration change back to its sources.  As it relies
       on [W3C-Trace-Context], we could also use associated mechanisms
-      for collecting and representing trace data such as OTLP.  For
-      instance, we could define a YANG model matching the OTLP
 
 
 
@@ -786,10 +786,14 @@ Quilbeuf, et al.        Expires 1 September 2025               [Page 14]
 Internet-Draft     Configuration Tracing via trace-id      February 2025
 
 
+      for collecting and representing trace data such as OTLP.  For
+      instance, we could define a YANG model matching the OTLP
       protobuffer definition (draft: https://github.com/rgaglian/ietf-
       netconf-trace-context-extension/blob/main/ietf-netconf-otlp-
       protocol.tree).  In that case the client-id could be a specific
-      attribute of the spans list.
+      attribute of the spans list.  CLOSED: The model proposed here is
+      focused on configuration tracing, which makes it simpler to use
+      than a more generic solution.
 
 10.  Normative References
 
@@ -830,10 +834,6 @@ Internet-Draft     Configuration Tracing via trace-id      February 2025
               Shell (SSH)", RFC 6242, DOI 10.17487/RFC6242, June 2011,
               <https://www.rfc-editor.org/info/rfc6242>.
 
-   [RFC8040]  Bierman, A., Bjorklund, M., and K. Watsen, "RESTCONF
-              Protocol", RFC 8040, DOI 10.17487/RFC8040, January 2017,
-              <https://www.rfc-editor.org/info/rfc8040>.
-
 
 
 
@@ -841,6 +841,10 @@ Quilbeuf, et al.        Expires 1 September 2025               [Page 15]
 
 Internet-Draft     Configuration Tracing via trace-id      February 2025
 
+
+   [RFC8040]  Bierman, A., Bjorklund, M., and K. Watsen, "RESTCONF
+              Protocol", RFC 8040, DOI 10.17487/RFC8040, January 2017,
+              <https://www.rfc-editor.org/info/rfc8040>.
 
    [RFC8174]  Leiba, B., "Ambiguity of Uppercase vs Lowercase in RFC
               2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
@@ -882,14 +886,10 @@ Internet-Draft     Configuration Tracing via trace-id      February 2025
 
 Appendix A.  Changes between revisions
 
+   This section is to be removed before publishing as an RFC.
+
    03 -> 04
 
-   *  Add security and IANA considerations
-
-   01 -> 02
-
-   *  Remove YANG specific annotation for the mechanism to pass the
-      client-id.
 
 
 
@@ -897,6 +897,13 @@ Quilbeuf, et al.        Expires 1 September 2025               [Page 16]
 
 Internet-Draft     Configuration Tracing via trace-id      February 2025
 
+
+   *  Add security and IANA considerations
+
+   01 -> 02
+
+   *  Remove YANG specific annotation for the mechanism to pass the
+      client-id.
 
    *  Align with NETCONF Trace context draft.
 
@@ -937,6 +944,16 @@ Appendix B.  Example of NETCONF message
    defined in our YANG module.  Here the client-id passed is
    'controller-01'.
 
+
+
+
+
+
+Quilbeuf, et al.        Expires 1 September 2025               [Page 17]
+
+Internet-Draft     Configuration Tracing via trace-id      February 2025
+
+
 Acknowledgements
 
    The authors would like to thank Mohamed Boucadair, Jan Linblad and
@@ -946,14 +963,6 @@ Authors' Addresses
 
    Jean Quilbeuf
    Huawei
-
-
-
-Quilbeuf, et al.        Expires 1 September 2025               [Page 17]
-
-Internet-Draft     Configuration Tracing via trace-id      February 2025
-
-
    Email: jean.quilbeuf@huawei.com
 
 
@@ -981,15 +990,6 @@ Internet-Draft     Configuration Tracing via trace-id      February 2025
    Qiong Sun
    China Telecom
    Email: sunqiong@chinatelecom.cn
-
-
-
-
-
-
-
-
-
 
 
 

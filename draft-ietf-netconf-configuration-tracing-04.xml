@@ -91,7 +91,7 @@
     <note removeInRFC="true">
       <name>Discussion Venues</name>
       <t>Source for this draft and an issue tracker can be found at
-       <eref target="https://github.com/JeanQuilbeufHuawei/draft-quilbeuf-opsawg-configuration-tracing"/>.</t>
+       <eref target="https://github.com/netconf-wg/configuration-tracing"/>.</t>
     </note>
   </front>
   <middle>
@@ -408,7 +408,7 @@ module ietf-external-transaction-id {
      of that client is stored as well to indicated which client
      triggered the configuration change.
 
-     Copyright (c) 2022 IETF Trust and the persons identified as
+     Copyright (c) 2025 IETF Trust and the persons identified as
      authors of the code.  All rights reserved.
 
      Redistribution and use in source and binary forms, with or
@@ -537,12 +537,50 @@ module ietf-external-transaction-id {
 
     <section anchor="security">
         <name>Security Considerations</name>
+        <t>
+          The YANG module specified in this document defines a schema for data that is designed to be accessed via network management protocols such as NETCONF <xref target="RFC6241"/> or RESTCONF <xref target="RFC8040"/>.
+          The lowest NETCONF layer is the secure transport layer, and the mandatory-to-implement secure transport is Secure Shell (SSH) <xref target="RFC6242"/>.
+          The lowest RESTCONF layer is HTTPS, and the mandatory-to-implement secure transport is TLS <xref target="RFC8446"/>.
+        </t>
+        <t>
+          The Network Configuration Access Control Model (NACM) <xref target="RFC8341"/> provides the means to restrict access for particular NETCONF or RESTCONF users to a preconfigured subset of all available NETCONF or RESTCONF protocol operations and content.
+        </t>
+        <t>
+          Some of the readable data nodes in this YANG module may be considered sensitive or vulnerable in some network environments. It is thus important to control read access (e.g., via get, get-config, or notification) to these data nodes. These are the subtrees and data nodes and their sensitivity/vulnerability:
+        </t>
+        <ul>
+          <li>
+            <tt>external-transactions-id/configuration-change</tt> exposes
+            information about which user or external system can configure the
+            device and could help an attacker to send its own configuration
+            to the device. It could also give some information about the
+            architecture of the configuration, i.e. what are the controllers
+            and the orchestrators.
+          </li>
+        </ul>
+
     </section>
     <section anchor="iana">
       <name>IANA Considerations</name>
+      <t>RFC Ed.: replace XXXX with actual RFC number and remove this note.</t>
       <t>
-        This document includes no request to IANA.
+        IANA is requested to register the following URI in the "ns" subregistry within the "IETF XML Registry" <xref target="RFC3688"/>:
       </t>
+      <artwork>
+        URI: urn:ietf:params:xml:ns:yang:ietf-external-transaction-id
+        Registrant Contact:  The IESG.
+        XML: N/A; the requested URI is an XML namespace.
+      </artwork>
+      <t>
+        IANA is requested to register the following YANG module in the "YANG Module Names" subregistry <xref target="RFC6020"/> within the "YANG Parameters" registry.
+      </t>
+      <artwork>
+        Name: ietf-external-transaction-id
+        Maintained by IANA?  N
+        Namespace: urn:ietf:params:xml:ns:yang:ietf-external-transaction-id
+        Prefix: ext-txid
+        Reference: RFC XXXX
+      </artwork>
     </section>
     <section>
       <name>Contributors</name>
@@ -563,8 +601,13 @@ module ietf-external-transaction-id {
     <references title="Normative References">
       <?rfc include="http://xml.resource.org/public/rfc/bibxml/reference.RFC.2119.xml"?>
       <?rfc include="http://xml.resource.org/public/rfc/bibxml/reference.RFC.6241.xml"?>
+      <?rfc include="http://xml.resource.org/public/rfc/bibxml/reference.RFC.6242.xml"?>
+      <?rfc include="http://xml.resource.org/public/rfc/bibxml/reference.RFC.8040.xml"?>
       <?rfc include="http://xml.resource.org/public/rfc/bibxml/reference.RFC.8174.xml"?>
       <?rfc include="http://xml.resource.org/public/rfc/bibxml/reference.RFC.8340.xml"?>
+      <?rfc include="http://xml.resource.org/public/rfc/bibxml/reference.RFC.8341.xml"?>
+      <?rfc
+          include="http://xml.resource.org/public/rfc/bibxml/reference.RFC.8446.xml"?>
       <?rfc include="http://xml.resource.org/public/rfc/bibxml3/reference.I-D.draft-ietf-netconf-transaction-id-07.xml"?>
       <?rfc include="http://xml.resource.org/public/rfc/bibxml3/reference.I-D.ietf-netconf-trace-ctx-extension.xml"?>
       <?rfc include="http://xml.resource.org/public/rfc/bibxml3/reference.I-D.ietf-netconf-restconf-trace-ctx-headers.xml"?>
@@ -579,12 +622,19 @@ module ietf-external-transaction-id {
 </reference>
     </references>
     <references title="Informative References">
-      <?rfc include="http://xml.resource.org/public/rfc/bibxml/reference.RFC.8040.xml"?>
+      <?rfc include="http://xml.resource.org/public/rfc/bibxml/reference.RFC.3688.xml"?>
+      <?rfc include="http://xml.resource.org/public/rfc/bibxml/reference.RFC.6020.xml"?>
       <?rfc include="http://xml.resource.org/public/rfc/bibxml/reference.RFC.9417.xml"?>
     </references>
     <?rfc needLines="100"?>
     <section>
       <name>Changes between revisions</name>
+      <t>
+        03 -> 04
+      </t>
+      <ul>
+        <li>Add security and IANA considerations</li>
+      </ul>
       <t>
         01 -> 02
       </t>

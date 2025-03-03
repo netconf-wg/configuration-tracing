@@ -5,13 +5,13 @@
 OPSAWG                                                       J. Quilbeuf
 Internet-Draft                                                 B. Claise
 Intended status: Standards Track                                  Huawei
-Expires: 1 September 2025                                        T. Graf
+Expires: 4 September 2025                                        T. Graf
                                                                 Swisscom
                                                                 D. Lopez
                                                           Telefonica I+D
                                                                   Q. Sun
                                                            China Telecom
-                                                        28 February 2025
+                                                            3 March 2025
 
 
               External Trace ID for Configuration Tracing
@@ -53,9 +53,9 @@ Status of This Memo
 
 
 
-Quilbeuf, et al.        Expires 1 September 2025                [Page 1]
+Quilbeuf, et al.        Expires 4 September 2025                [Page 1]
 
-Internet-Draft     Configuration Tracing via trace-id      February 2025
+Internet-Draft     Configuration Tracing via trace-id         March 2025
 
 
    Internet-Drafts are working documents of the Internet Engineering
@@ -68,7 +68,7 @@ Internet-Draft     Configuration Tracing via trace-id      February 2025
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 1 September 2025.
+   This Internet-Draft will expire on 4 September 2025.
 
 Copyright Notice
 
@@ -109,17 +109,17 @@ Table of Contents
 
 
 
-Quilbeuf, et al.        Expires 1 September 2025                [Page 2]
+Quilbeuf, et al.        Expires 4 September 2025                [Page 2]
 
-Internet-Draft     Configuration Tracing via trace-id      February 2025
+Internet-Draft     Configuration Tracing via trace-id         March 2025
 
 
-   10. Normative References  . . . . . . . . . . . . . . . . . . . .  15
+   10. Normative References  . . . . . . . . . . . . . . . . . . . .  14
    11. Informative References  . . . . . . . . . . . . . . . . . . .  16
    Appendix A.  Changes between revisions  . . . . . . . . . . . . .  16
    Appendix B.  Example of NETCONF message . . . . . . . . . . . . .  17
-   Acknowledgements  . . . . . . . . . . . . . . . . . . . . . . . .  18
-   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  18
+   Acknowledgements  . . . . . . . . . . . . . . . . . . . . . . . .  17
+   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  17
 
 1.  Introduction
 
@@ -165,9 +165,9 @@ Internet-Draft     Configuration Tracing via trace-id      February 2025
 
 
 
-Quilbeuf, et al.        Expires 1 September 2025                [Page 3]
+Quilbeuf, et al.        Expires 4 September 2025                [Page 3]
 
-Internet-Draft     Configuration Tracing via trace-id      February 2025
+Internet-Draft     Configuration Tracing via trace-id         March 2025
 
 
    unambiguously identify the corresponding transaction, if any, on the
@@ -221,9 +221,9 @@ Internet-Draft     Configuration Tracing via trace-id      February 2025
 
 
 
-Quilbeuf, et al.        Expires 1 September 2025                [Page 4]
+Quilbeuf, et al.        Expires 4 September 2025                [Page 4]
 
-Internet-Draft     Configuration Tracing via trace-id      February 2025
+Internet-Draft     Configuration Tracing via trace-id         March 2025
 
 
 3.1.  Configuration Mistakes
@@ -277,9 +277,9 @@ Internet-Draft     Configuration Tracing via trace-id      February 2025
 
 
 
-Quilbeuf, et al.        Expires 1 September 2025                [Page 5]
+Quilbeuf, et al.        Expires 4 September 2025                [Page 5]
 
-Internet-Draft     Configuration Tracing via trace-id      February 2025
+Internet-Draft     Configuration Tracing via trace-id         March 2025
 
 
 4.1.  Existing configuration metadata on device
@@ -333,9 +333,9 @@ Internet-Draft     Configuration Tracing via trace-id      February 2025
 
 
 
-Quilbeuf, et al.        Expires 1 September 2025                [Page 6]
+Quilbeuf, et al.        Expires 4 September 2025                [Page 6]
 
-Internet-Draft     Configuration Tracing via trace-id      February 2025
+Internet-Draft     Configuration Tracing via trace-id         March 2025
 
 
                             +---------------+
@@ -389,9 +389,9 @@ Internet-Draft     Configuration Tracing via trace-id      February 2025
 
 
 
-Quilbeuf, et al.        Expires 1 September 2025                [Page 7]
+Quilbeuf, et al.        Expires 4 September 2025                [Page 7]
 
-Internet-Draft     Configuration Tracing via trace-id      February 2025
+Internet-Draft     Configuration Tracing via trace-id         March 2025
 
 
                                                      +---------------+
@@ -445,9 +445,9 @@ Internet-Draft     Configuration Tracing via trace-id      February 2025
 
 
 
-Quilbeuf, et al.        Expires 1 September 2025                [Page 8]
+Quilbeuf, et al.        Expires 4 September 2025                [Page 8]
 
-Internet-Draft     Configuration Tracing via trace-id      February 2025
+Internet-Draft     Configuration Tracing via trace-id         March 2025
 
 
    4.  From that query, the ADS knows the local-commit-id on the client
@@ -501,9 +501,9 @@ Internet-Draft     Configuration Tracing via trace-id      February 2025
 
 
 
-Quilbeuf, et al.        Expires 1 September 2025                [Page 9]
+Quilbeuf, et al.        Expires 4 September 2025                [Page 9]
 
-Internet-Draft     Configuration Tracing via trace-id      February 2025
+Internet-Draft     Configuration Tracing via trace-id         March 2025
 
 
    The trace-parent is present to identify the trace associated to the
@@ -557,9 +557,9 @@ Internet-Draft     Configuration Tracing via trace-id      February 2025
 
 
 
-Quilbeuf, et al.        Expires 1 September 2025               [Page 10]
+Quilbeuf, et al.        Expires 4 September 2025               [Page 10]
 
-Internet-Draft     Configuration Tracing via trace-id      February 2025
+Internet-Draft     Configuration Tracing via trace-id         March 2025
 
 
         The module stores the identifier of the trace, if any, that
@@ -613,9 +613,9 @@ Internet-Draft     Configuration Tracing via trace-id      February 2025
 
 
 
-Quilbeuf, et al.        Expires 1 September 2025               [Page 11]
+Quilbeuf, et al.        Expires 4 September 2025               [Page 11]
 
-Internet-Draft     Configuration Tracing via trace-id      February 2025
+Internet-Draft     Configuration Tracing via trace-id         March 2025
 
 
             format described in this module.";
@@ -669,9 +669,9 @@ Internet-Draft     Configuration Tracing via trace-id      February 2025
 
 
 
-Quilbeuf, et al.        Expires 1 September 2025               [Page 12]
+Quilbeuf, et al.        Expires 4 September 2025               [Page 12]
 
-Internet-Draft     Configuration Tracing via trace-id      February 2025
+Internet-Draft     Configuration Tracing via trace-id         March 2025
 
 
          leaf timestamp {
@@ -725,9 +725,9 @@ Internet-Draft     Configuration Tracing via trace-id      February 2025
 
 
 
-Quilbeuf, et al.        Expires 1 September 2025               [Page 13]
+Quilbeuf, et al.        Expires 4 September 2025               [Page 13]
 
-Internet-Draft     Configuration Tracing via trace-id      February 2025
+Internet-Draft     Configuration Tracing via trace-id         March 2025
 
 
    The Network Configuration Access Control Model (NACM) [RFC8341]
@@ -775,27 +775,16 @@ Internet-Draft     Configuration Tracing via trace-id      February 2025
 
    This section is to be removed before publishing as an RFC.
 
-   *  The model and usage presented here focuses of the problem of
-      tracing a configuration change back to its sources.  As it relies
-      on [W3C-Trace-Context], we could also use associated mechanisms
-
-
-
-Quilbeuf, et al.        Expires 1 September 2025               [Page 14]
-
-Internet-Draft     Configuration Tracing via trace-id      February 2025
-
-
-      for collecting and representing trace data such as OTLP.  For
-      instance, we could define a YANG model matching the OTLP
-      protobuffer definition (draft: https://github.com/rgaglian/ietf-
-      netconf-trace-context-extension/blob/main/ietf-netconf-otlp-
-      protocol.tree).  In that case the client-id could be a specific
-      attribute of the spans list.  CLOSED: The model proposed here is
-      focused on configuration tracing, which makes it simpler to use
-      than a more generic solution.
+   None
 
 10.  Normative References
+
+
+
+Quilbeuf, et al.        Expires 4 September 2025               [Page 14]
+
+Internet-Draft     Configuration Tracing via trace-id         March 2025
+
 
    [I-D.ietf-netconf-restconf-trace-ctx-headers]
               Gagliano, R., Larsson, K., and J. Lindblad, "RESTCONF
@@ -834,14 +823,6 @@ Internet-Draft     Configuration Tracing via trace-id      February 2025
               Shell (SSH)", RFC 6242, DOI 10.17487/RFC6242, June 2011,
               <https://www.rfc-editor.org/info/rfc6242>.
 
-
-
-
-Quilbeuf, et al.        Expires 1 September 2025               [Page 15]
-
-Internet-Draft     Configuration Tracing via trace-id      February 2025
-
-
    [RFC8040]  Bierman, A., Bjorklund, M., and K. Watsen, "RESTCONF
               Protocol", RFC 8040, DOI 10.17487/RFC8040, January 2017,
               <https://www.rfc-editor.org/info/rfc8040>.
@@ -853,6 +834,13 @@ Internet-Draft     Configuration Tracing via trace-id      February 2025
    [RFC8340]  Bjorklund, M. and L. Berger, Ed., "YANG Tree Diagrams",
               BCP 215, RFC 8340, DOI 10.17487/RFC8340, March 2018,
               <https://www.rfc-editor.org/info/rfc8340>.
+
+
+
+Quilbeuf, et al.        Expires 4 September 2025               [Page 15]
+
+Internet-Draft     Configuration Tracing via trace-id         March 2025
+
 
    [RFC8341]  Bierman, A. and M. Bjorklund, "Network Configuration
               Access Control Model", STD 91, RFC 8341,
@@ -890,14 +878,6 @@ Appendix A.  Changes between revisions
 
    03 -> 04
 
-
-
-
-Quilbeuf, et al.        Expires 1 September 2025               [Page 16]
-
-Internet-Draft     Configuration Tracing via trace-id      February 2025
-
-
    *  Add security and IANA considerations
 
    01 -> 02
@@ -910,6 +890,13 @@ Internet-Draft     Configuration Tracing via trace-id      February 2025
    00(WG adoption) -> 01
 
    *  Define mechanism to pass the client-id.
+
+
+
+Quilbeuf, et al.        Expires 4 September 2025               [Page 16]
+
+Internet-Draft     Configuration Tracing via trace-id         March 2025
+
 
    01 -> 02
 
@@ -944,16 +931,6 @@ Appendix B.  Example of NETCONF message
    defined in our YANG module.  Here the client-id passed is
    'controller-01'.
 
-
-
-
-
-
-Quilbeuf, et al.        Expires 1 September 2025               [Page 17]
-
-Internet-Draft     Configuration Tracing via trace-id      February 2025
-
-
 Acknowledgements
 
    The authors would like to thank Mohamed Boucadair, Jan Linblad and
@@ -969,6 +946,12 @@ Authors' Addresses
    Benoit Claise
    Huawei
    Email: benoit.claise@huawei.com
+
+
+
+Quilbeuf, et al.        Expires 4 September 2025               [Page 17]
+
+Internet-Draft     Configuration Tracing via trace-id         March 2025
 
 
    Thomas Graf
@@ -1005,4 +988,21 @@ Authors' Addresses
 
 
 
-Quilbeuf, et al.        Expires 1 September 2025               [Page 18]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Quilbeuf, et al.        Expires 4 September 2025               [Page 18]

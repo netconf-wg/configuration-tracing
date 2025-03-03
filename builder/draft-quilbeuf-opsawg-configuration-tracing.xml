@@ -176,7 +176,7 @@
         <section anchor="concurrent-nms-configuration">
           <name>Concurrent NMS Configuration</name>
           <t>
-            Building on the previous use case is the situation where two NMS's, unaware of the each other, are configuring a common router,
+            Building on the previous use case is the situation where two NMS's, unaware of each other, are configuring a common router,
             each believing that they are the only NMS for the common router.
             So one configuration executed by the NMS1 is overwritten by the NMS2, which in turn is overwritten by NMS1, etc.
           </t>
@@ -299,7 +299,7 @@
         </t>
         <ol>
           <li>
-            The Anomaly Detection System (ADS) identifies the commit id that created an issue, for instance by looking for the last commit-id occurring before the issue was detected.
+            The Anomaly Detection System (ADS) identifies the commit-id that created an issue, for instance by looking for the last commit-id occurring before the issue was detected.
             The ADS queries the NE for the trace id and client id associated to the commit-id.
           </li>
           <li>
@@ -507,7 +507,8 @@
         <artwork><![CDATA[
 <rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="1"
      xmlns:w3ctc="urn:ietf:params:xml:ns:netconf:w3ctc:1.0"
-     xmlns:ext-txid="urn:ietf:params:xml:ns:yang:ietf-external-transaction-id"
+     xmlns:ext-txid=
+       "urn:ietf:params:xml:ns:yang:ietf-external-transaction-id"
      w3ctc:traceparent=
        "00-4bf92f3577b34da6a3ce929d0e0e4736-00f067aa0ba902b7-01"
      ext-txid:client-id="controller-01">

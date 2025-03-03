@@ -45,7 +45,7 @@ module ietf-external-transaction-id {
     description
       "Initial revision";
     reference
-      "RFC xxxx: Title to be completed";
+      "RFC xxxx: External Trace ID for Configuration Tracing";
   }
 
   typedef hex-digits {

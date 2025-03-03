@@ -245,7 +245,7 @@ Internet-Draft     Configuration Tracing via trace-id         March 2025
 3.2.  Concurrent NMS Configuration
 
    Building on the previous use case is the situation where two NMS's,
-   unaware of the each other, are configuring a common router, each
+   unaware of each other, are configuring a common router, each
    believing that they are the only NMS for the common router.  So one
    configuration executed by the NMS1 is overwritten by the NMS2, which
    in turn is overwritten by NMS1, etc.
@@ -423,7 +423,7 @@ Internet-Draft     Configuration Tracing via trace-id         March 2025
    Network Equipment back to a service request are illustrated in
    Figure 2.  They are detailed below.
 
-   1.  The Anomaly Detection System (ADS) identifies the commit id that
+   1.  The Anomaly Detection System (ADS) identifies the commit-id that
        created an issue, for instance by looking for the last commit-id
        occurring before the issue was detected.  The ADS queries the NE
        for the trace id and client id associated to the commit-id.
@@ -584,7 +584,7 @@ Internet-Draft     Configuration Tracing via trace-id         March 2025
        description
          "Initial revision";
        reference
-         "RFC xxxx: Title to be completed";
+         "RFC xxxx: External Trace ID for Configuration Tracing";
      }
 
      typedef hex-digits {
@@ -790,17 +790,17 @@ Internet-Draft     Configuration Tracing via trace-id         March 2025
               Gagliano, R., Larsson, K., and J. Lindblad, "RESTCONF
               Extension to Support Trace Context Headers", Work in
               Progress, Internet-Draft, draft-ietf-netconf-restconf-
-              trace-ctx-headers-04, 12 December 2024,
-              <https://datatracker.ietf.org/doc/html/draft-ietf-netconf-
-              restconf-trace-ctx-headers-04>.
+              trace-ctx-headers-06, 12 December 2024,
+              <https://datatracker.ietf.org/api/v1/doc/document/draft-
+              ietf-netconf-restconf-trace-ctx-headers/>.
 
    [I-D.ietf-netconf-trace-ctx-extension]
               Gagliano, R., Larsson, K., and J. Lindblad, "NETCONF
               Extension to support Trace Context propagation", Work in
               Progress, Internet-Draft, draft-ietf-netconf-trace-ctx-
-              extension-03, 12 December 2024,
-              <https://datatracker.ietf.org/doc/html/draft-ietf-netconf-
-              trace-ctx-extension-03>.
+              extension-04, 3 March 2025,
+              <https://datatracker.ietf.org/api/v1/doc/document/draft-
+              ietf-netconf-trace-ctx-extension/>.
 
    [I-D.ietf-netconf-transaction-id]
               Lindblad, J., "Transaction ID Mechanism for NETCONF", Work
@@ -913,17 +913,18 @@ Internet-Draft     Configuration Tracing via trace-id         March 2025
 
 Appendix B.  Example of NETCONF message
 
-<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="1"
-     xmlns:w3ctc="urn:ietf:params:xml:ns:netconf:w3ctc:1.0"
-     xmlns:ext-txid="urn:ietf:params:xml:ns:yang:ietf-external-transaction-id"
-     w3ctc:traceparent=
-       "00-4bf92f3577b34da6a3ce929d0e0e4736-00f067aa0ba902b7-01"
-     ext-txid:client-id="controller-01">
-  <commit/>
-</rpc>
+   <rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="1"
+        xmlns:w3ctc="urn:ietf:params:xml:ns:netconf:w3ctc:1.0"
+        xmlns:ext-txid=
+          "urn:ietf:params:xml:ns:yang:ietf-external-transaction-id"
+        w3ctc:traceparent=
+          "00-4bf92f3577b34da6a3ce929d0e0e4736-00f067aa0ba902b7-01"
+        ext-txid:client-id="controller-01">
+     <commit/>
+   </rpc>
 
 
-       Figure 4: Example of NETCONF commit RPC with annotations
+          Figure 4: Example of NETCONF commit RPC with annotations
 
    In Figure 4, we present an RPC annotated with the traceparent and the
    client-id.  The traceparent example is taken from
@@ -945,13 +946,15 @@ Authors' Addresses
 
    Benoit Claise
    Huawei
-   Email: benoit.claise@huawei.com
 
 
 
 Quilbeuf, et al.        Expires 4 September 2025               [Page 17]
 
 Internet-Draft     Configuration Tracing via trace-id         March 2025
+
+
+   Email: benoit.claise@huawei.com
 
 
    Thomas Graf
@@ -973,9 +976,6 @@ Internet-Draft     Configuration Tracing via trace-id         March 2025
    Qiong Sun
    China Telecom
    Email: sunqiong@chinatelecom.cn
-
-
-
 
 
 

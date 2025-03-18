@@ -9,7 +9,7 @@
 <head> 
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
   <meta http-equiv="Content-Style-Type" content="text/css" /> 
-  <title>Diff: draft-ietf-netconf-configuration-tracing-03.txt - draft-ietf-netconf-configuration-tracing-04.txt</title> 
+  <title>Diff: draft-ietf-netconf-configuration-tracing-04.txt - draft-ietf-netconf-configuration-tracing-05.txt</title> 
   <style type="text/css"> 
     body    { margin: 0.4ex; margin-right: auto; } 
     tr      { } 
@@ -89,24 +89,24 @@ document.onkeydown = function(e) {
 </head> 
 <body > 
   <table border="0" cellpadding="0" cellspacing="0"> 
-  <tr id="part-1" bgcolor="orange"><th></th><th>&nbsp;draft-ietf-netconf-configuration-tracing-03.txt&nbsp;</th><th> </th><th>&nbsp;draft-ietf-netconf-configuration-tracing-04.txt&nbsp;</th><th></th></tr> 
+  <tr id="part-1" bgcolor="orange"><th></th><th>&nbsp;draft-ietf-netconf-configuration-tracing-04.txt&nbsp;</th><th> </th><th>&nbsp;draft-ietf-netconf-configuration-tracing-05.txt&nbsp;</th><th></th></tr> 
       <tr><td class="lineno"></td><td class="left"></td><td> </td><td class="right"></td><td class="lineno"></td></tr>
       <tr><td class="lineno"></td><td class="left">OPSAWG                                                       J. Quilbeuf</td><td> </td><td class="right">OPSAWG                                                       J. Quilbeuf</td><td class="lineno"></td></tr>
       <tr><td class="lineno"></td><td class="left">Internet-Draft                                                 B. Claise</td><td> </td><td class="right">Internet-Draft                                                 B. Claise</td><td class="lineno"></td></tr>
       <tr><td class="lineno"></td><td class="left">Intended status: Standards Track                                  Huawei</td><td> </td><td class="right">Intended status: Standards Track                                  Huawei</td><td class="lineno"></td></tr>
       <tr id="diff0001"><td></td></tr>
-      <tr><td class="lineno"></td><td class="lblock">Expires: <span class="delete">24 April 2025   </span>                                        T. Graf</td><td> </td><td class="rblock">Expires: <span class="insert">4 September 2025</span>                                        T. Graf</td><td class="lineno"></td></tr>
+      <tr><td class="lineno"></td><td class="lblock">Expires: <span class="delete">4 September 2025 </span>                                       T. Graf</td><td> </td><td class="rblock">Expires: <span class="insert">19 September 2025</span>                                       T. Graf</td><td class="lineno"></td></tr>
       <tr><td class="lineno"></td><td class="left">                                                                Swisscom</td><td> </td><td class="right">                                                                Swisscom</td><td class="lineno"></td></tr>
       <tr><td class="lineno"></td><td class="left">                                                                D. Lopez</td><td> </td><td class="right">                                                                D. Lopez</td><td class="lineno"></td></tr>
       <tr><td class="lineno"></td><td class="left">                                                          Telefonica I+D</td><td> </td><td class="right">                                                          Telefonica I+D</td><td class="lineno"></td></tr>
       <tr><td class="lineno"></td><td class="left">                                                                  Q. Sun</td><td> </td><td class="right">                                                                  Q. Sun</td><td class="lineno"></td></tr>
       <tr><td class="lineno"></td><td class="left">                                                           China Telecom</td><td> </td><td class="right">                                                           China Telecom</td><td class="lineno"></td></tr>
       <tr id="diff0002"><td></td></tr>
-      <tr><td class="lineno"></td><td class="lblock">                                                         <span class="delete">21 October 2024</span></td><td> </td><td class="rblock">                                                         <span class="insert">   3 March 2025</span></td><td class="lineno"></td></tr>
+      <tr><td class="lineno"></td><td class="lblock">                                                           <span class="delete"> 3</span> March 2025</td><td> </td><td class="rblock">                                                           <span class="insert">18</span> March 2025</td><td class="lineno"></td></tr>
       <tr><td class="lineno"></td><td class="left"></td><td> </td><td class="right"></td><td class="lineno"></td></tr>
       <tr><td class="lineno"></td><td class="left">              External Trace ID for Configuration Tracing</td><td> </td><td class="right">              External Trace ID for Configuration Tracing</td><td class="lineno"></td></tr>
       <tr id="diff0003"><td></td></tr>
-      <tr><td class="lineno"></td><td class="lblock">              draft-ietf-netconf-configuration-tracing-0<span class="delete">3</span></td><td> </td><td class="rblock">              draft-ietf-netconf-configuration-tracing-0<span class="insert">4</span></td><td class="lineno"></td></tr>
+      <tr><td class="lineno"></td><td class="lblock">              draft-ietf-netconf-configuration-tracing-0<span class="delete">4</span></td><td> </td><td class="rblock">              draft-ietf-netconf-configuration-tracing-0<span class="insert">5</span></td><td class="lineno"></td></tr>
       <tr><td class="lineno"></td><td class="left"></td><td> </td><td class="right"></td><td class="lineno"></td></tr>
       <tr><td class="lineno"></td><td class="left">Abstract</td><td> </td><td class="right">Abstract</td><td class="lineno"></td></tr>
       <tr><td class="lineno"></td><td class="left"></td><td> </td><td class="right"></td><td class="lineno"></td></tr>
@@ -118,26 +118,7 @@ document.onkeydown = function(e) {
       <tr><td class="lineno"></td><td class="left">   stem from concurrent NMSes with overlapping intents, each having</td><td> </td><td class="right">   stem from concurrent NMSes with overlapping intents, each having</td><td class="lineno"></td></tr>
       <tr><td class="lineno"></td><td class="left">   their own tasks to perform.  In such a case, it is important to map</td><td> </td><td class="right">   their own tasks to perform.  In such a case, it is important to map</td><td class="lineno"></td></tr>
       <tr><td class="lineno"></td><td class="left"></td><td> </td><td class="right"></td><td class="lineno"></td></tr>
-      <tr id="part-2" class="change" ><td></td><th><small>skipping to change at</small><a href="#part-2"><em> page 1, line 44<span class="hide"> &para;</span></em></a></th><th> </th><th><small>skipping to change at</small><a href="#part-2"><em> page 1, line 44<span class="hide"> &para;</span></em></a></th><td></td></tr>
-      <tr><td class="lineno"></td><td class="left">   closed loop automation required for self-healing networks.  The</td><td> </td><td class="right">   closed loop automation required for self-healing networks.  The</td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left">   specification also includes a YANG module that is meant to map a</td><td> </td><td class="right">   specification also includes a YANG module that is meant to map a</td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left">   local configuration change to the corresponding trace id, up to the</td><td> </td><td class="right">   local configuration change to the corresponding trace id, up to the</td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left">   controller or even the orchestrator.</td><td> </td><td class="right">   controller or even the orchestrator.</td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left"></td><td> </td><td class="right"></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left">Discussion Venues</td><td> </td><td class="right">Discussion Venues</td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left"></td><td> </td><td class="right"></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left">   This note is to be removed before publishing as an RFC.</td><td> </td><td class="right">   This note is to be removed before publishing as an RFC.</td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left"></td><td> </td><td class="right"></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left">   Source for this draft and an issue tracker can be found at</td><td> </td><td class="right">   Source for this draft and an issue tracker can be found at</td><td class="lineno"></td></tr>
-      <tr id="diff0004"><td></td></tr>
-      <tr><td class="lineno"></td><td class="lblock">   <span class="delete">https://github.com/JeanQuilbeufHuawei/draft-quilbeuf-opsawg-</span></td><td> </td><td class="rblock">   <span class="insert">https://github.com/netconf-wg/configuration-tracing.</span></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="lblock"><span class="delete">   configuration-tracing.</span></td><td> </td><td class="rblock"></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left"></td><td> </td><td class="right"></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left">Status of This Memo</td><td> </td><td class="right">Status of This Memo</td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left"></td><td> </td><td class="right"></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left">   This Internet-Draft is submitted in full conformance with the</td><td> </td><td class="right">   This Internet-Draft is submitted in full conformance with the</td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left">   provisions of BCP 78 and BCP 79.</td><td> </td><td class="right">   provisions of BCP 78 and BCP 79.</td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left"></td><td> </td><td class="right"></td><td class="lineno"></td></tr>
+      <tr id="part-2" class="change" ><td></td><th><small>skipping to change at</small><a href="#part-2"><em> page 2, line 15<span class="hide"> &para;</span></em></a></th><th> </th><th><small>skipping to change at</small><a href="#part-2"><em> page 2, line 15<span class="hide"> &para;</span></em></a></th><td></td></tr>
       <tr><td class="lineno"></td><td class="left">   Internet-Drafts are working documents of the Internet Engineering</td><td> </td><td class="right">   Internet-Drafts are working documents of the Internet Engineering</td><td class="lineno"></td></tr>
       <tr><td class="lineno"></td><td class="left">   Task Force (IETF).  Note that other groups may also distribute</td><td> </td><td class="right">   Task Force (IETF).  Note that other groups may also distribute</td><td class="lineno"></td></tr>
       <tr><td class="lineno"></td><td class="left">   working documents as Internet-Drafts.  The list of current Internet-</td><td> </td><td class="right">   working documents as Internet-Drafts.  The list of current Internet-</td><td class="lineno"></td></tr>
@@ -148,28 +129,20 @@ document.onkeydown = function(e) {
       <tr><td class="lineno"></td><td class="left">   time.  It is inappropriate to use Internet-Drafts as reference</td><td> </td><td class="right">   time.  It is inappropriate to use Internet-Drafts as reference</td><td class="lineno"></td></tr>
       <tr><td class="lineno"></td><td class="left">   material or to cite them other than as "work in progress."</td><td> </td><td class="right">   material or to cite them other than as "work in progress."</td><td class="lineno"></td></tr>
       <tr><td class="lineno"></td><td class="left"></td><td> </td><td class="right"></td><td class="lineno"></td></tr>
-      <tr id="diff0005"><td></td></tr>
-      <tr><td class="lineno"></td><td class="lblock">   This Internet-Draft will expire on <span class="delete">24 April</span> 2025.</td><td> </td><td class="rblock">   This Internet-Draft will expire on <span class="insert">4 September</span> 2025.</td><td class="lineno"></td></tr>
+      <tr id="diff0004"><td></td></tr>
+      <tr><td class="lineno"></td><td class="lblock">   This Internet-Draft will expire on <span class="delete">4</span> September 2025.</td><td> </td><td class="rblock">   This Internet-Draft will expire on <span class="insert">19</span> September 2025.</td><td class="lineno"></td></tr>
       <tr><td class="lineno"></td><td class="left"></td><td> </td><td class="right"></td><td class="lineno"></td></tr>
       <tr><td class="lineno"></td><td class="left">Copyright Notice</td><td> </td><td class="right">Copyright Notice</td><td class="lineno"></td></tr>
       <tr><td class="lineno"></td><td class="left"></td><td> </td><td class="right"></td><td class="lineno"></td></tr>
-      <tr id="diff0006"><td></td></tr>
-      <tr><td class="lineno"></td><td class="lblock">   Copyright (c) 202<span class="delete">4</span> IETF Trust and the persons identified as the</td><td> </td><td class="rblock">   Copyright (c) 202<span class="insert">5</span> IETF Trust and the persons identified as the</td><td class="lineno"></td></tr>
+      <tr><td class="lineno"></td><td class="left">   Copyright (c) 2025 IETF Trust and the persons identified as the</td><td> </td><td class="right">   Copyright (c) 2025 IETF Trust and the persons identified as the</td><td class="lineno"></td></tr>
       <tr><td class="lineno"></td><td class="left">   document authors.  All rights reserved.</td><td> </td><td class="right">   document authors.  All rights reserved.</td><td class="lineno"></td></tr>
       <tr><td class="lineno"></td><td class="left"></td><td> </td><td class="right"></td><td class="lineno"></td></tr>
       <tr><td class="lineno"></td><td class="left">   This document is subject to BCP 78 and the IETF Trust's Legal</td><td> </td><td class="right">   This document is subject to BCP 78 and the IETF Trust's Legal</td><td class="lineno"></td></tr>
       <tr><td class="lineno"></td><td class="left">   Provisions Relating to IETF Documents (https://trustee.ietf.org/</td><td> </td><td class="right">   Provisions Relating to IETF Documents (https://trustee.ietf.org/</td><td class="lineno"></td></tr>
       <tr><td class="lineno"></td><td class="left">   license-info) in effect on the date of publication of this document.</td><td> </td><td class="right">   license-info) in effect on the date of publication of this document.</td><td class="lineno"></td></tr>
       <tr><td class="lineno"></td><td class="left">   Please review these documents carefully, as they describe your rights</td><td> </td><td class="right">   Please review these documents carefully, as they describe your rights</td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left">   and restrictions with respect to this document.  Code Components</td><td> </td><td class="right">   and restrictions with respect to this document.  Code Components</td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left">   extracted from this document must include Revised BSD License text as</td><td> </td><td class="right">   extracted from this document must include Revised BSD License text as</td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left">   described in Section 4.e of the Trust Legal Provisions and are</td><td> </td><td class="right">   described in Section 4.e of the Trust Legal Provisions and are</td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left">   provided without warranty as described in the Revised BSD License.</td><td> </td><td class="right">   provided without warranty as described in the Revised BSD License.</td><td class="lineno"></td></tr>
       <tr><td class="lineno"></td><td class="left"></td><td> </td><td class="right"></td><td class="lineno"></td></tr>
-      <tr id="part-3" class="change" ><td></td><th><small>skipping to change at</small><a href="#part-3"><em> page 3, line 6<span class="hide"> &para;</span></em></a></th><th> </th><th><small>skipping to change at</small><a href="#part-3"><em> page 2, line 50<span class="hide"> &para;</span></em></a></th><td></td></tr>
-      <tr><td class="lineno"></td><td class="left">   4.  Relying on W3C Trace Context to Trace Configuration</td><td> </td><td class="right">   4.  Relying on W3C Trace Context to Trace Configuration</td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left">           Modifications . . . . . . . . . . . . . . . . . . . . . .   5</td><td> </td><td class="right">           Modifications . . . . . . . . . . . . . . . . . . . . . .   5</td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left">     4.1.  Existing configuration metadata on device . . . . . . . .   6</td><td> </td><td class="right">     4.1.  Existing configuration metadata on device . . . . . . . .   6</td><td class="lineno"></td></tr>
+      <tr id="part-3" class="change" ><td></td><th><small>skipping to change at</small><a href="#part-3"><em> page 3, line 4<span class="hide"> &para;</span></em></a></th><th> </th><th><small>skipping to change at</small><a href="#part-3"><em> page 3, line 4<span class="hide"> &para;</span></em></a></th><td></td></tr>
       <tr><td class="lineno"></td><td class="left">     4.2.  Client ID . . . . . . . . . . . . . . . . . . . . . . . .   6</td><td> </td><td class="right">     4.2.  Client ID . . . . . . . . . . . . . . . . . . . . . . . .   6</td><td class="lineno"></td></tr>
       <tr><td class="lineno"></td><td class="left">     4.3.  Instantiating the YANG module . . . . . . . . . . . . . .   6</td><td> </td><td class="right">     4.3.  Instantiating the YANG module . . . . . . . . . . . . . .   6</td><td class="lineno"></td></tr>
       <tr><td class="lineno"></td><td class="left">     4.4.  Using the YANG module . . . . . . . . . . . . . . . . . .   7</td><td> </td><td class="right">     4.4.  Using the YANG module . . . . . . . . . . . . . . . . . .   7</td><td class="lineno"></td></tr>
@@ -177,17 +150,18 @@ document.onkeydown = function(e) {
       <tr><td class="lineno"></td><td class="left">     5.1.  Overview  . . . . . . . . . . . . . . . . . . . . . . . .   9</td><td> </td><td class="right">     5.1.  Overview  . . . . . . . . . . . . . . . . . . . . . . . .   9</td><td class="lineno"></td></tr>
       <tr><td class="lineno"></td><td class="left">     5.2.  YANG module ietf-external-transaction-id  . . . . . . . .  10</td><td> </td><td class="right">     5.2.  YANG module ietf-external-transaction-id  . . . . . . . .  10</td><td class="lineno"></td></tr>
       <tr><td class="lineno"></td><td class="left">   6.  Security Considerations . . . . . . . . . . . . . . . . . . .  13</td><td> </td><td class="right">   6.  Security Considerations . . . . . . . . . . . . . . . . . . .  13</td><td class="lineno"></td></tr>
+      <tr><td class="lineno"></td><td class="left">   7.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .  14</td><td> </td><td class="right">   7.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .  14</td><td class="lineno"></td></tr>
+      <tr><td class="lineno"></td><td class="left">   8.  Contributors  . . . . . . . . . . . . . . . . . . . . . . . .  14</td><td> </td><td class="right">   8.  Contributors  . . . . . . . . . . . . . . . . . . . . . . . .  14</td><td class="lineno"></td></tr>
+      <tr><td class="lineno"></td><td class="left">   9.  Open Issues / TODO  . . . . . . . . . . . . . . . . . . . . .  14</td><td> </td><td class="right">   9.  Open Issues / TODO  . . . . . . . . . . . . . . . . . . . . .  14</td><td class="lineno"></td></tr>
+      <tr id="diff0005"><td></td></tr>
+      <tr><td class="lineno"></td><td class="lblock">   10. Normative References  . . . . . . . . . . . . . . . . . . . .  1<span class="delete">4</span></td><td> </td><td class="rblock">   10. Normative References  . . . . . . . . . . . . . . . . . . . .  1<span class="insert">5</span></td><td class="lineno"></td></tr>
+      <tr><td class="lineno"></td><td class="left">   11. Informative References  . . . . . . . . . . . . . . . . . . .  16</td><td> </td><td class="right">   11. Informative References  . . . . . . . . . . . . . . . . . . .  16</td><td class="lineno"></td></tr>
+      <tr id="diff0006"><td></td></tr>
+      <tr><td class="lineno"></td><td class="lblock">   Appendix A.  Changes between revisions  . . . . . . . . . . . . .  1<span class="delete">6</span></td><td> </td><td class="rblock">   Appendix A.  Changes between revisions  . . . . . . . . . . . . .  1<span class="insert">7</span></td><td class="lineno"></td></tr>
+      <tr><td class="lineno"></td><td class="left">   Appendix B.  Example of NETCONF message . . . . . . . . . . . . .  17</td><td> </td><td class="right">   Appendix B.  Example of NETCONF message . . . . . . . . . . . . .  17</td><td class="lineno"></td></tr>
       <tr id="diff0007"><td></td></tr>
-      <tr><td class="lineno"></td><td class="lblock">   7.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .  <span class="delete">13</span></td><td> </td><td class="rblock">   7.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .  <span class="insert">14</span></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="lblock">   8.  Contributors  . . . . . . . . . . . . . . . . . . . . . . . .  <span class="delete">13</span></td><td> </td><td class="rblock">   8.  Contributors  . . . . . . . . . . . . . . . . . . . . . . . .  <span class="insert">14</span></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="lblock">   9.  Open Issues / TODO  . . . . . . . . . . . . . . . . . . . . .  <span class="delete">13</span></td><td> </td><td class="rblock">   9.  Open Issues / TODO  . . . . . . . . . . . . . . . . . . . . .  <span class="insert">14</span></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left">   10. Normative References  . . . . . . . . . . . . . . . . . . . .  14</td><td> </td><td class="right">   10. Normative References  . . . . . . . . . . . . . . . . . . . .  14</td><td class="lineno"></td></tr>
-      <tr id="diff0008"><td></td></tr>
-      <tr><td class="lineno"></td><td class="lblock">   11. Informative References  . . . . . . . . . . . . . . . . . . .  <span class="delete">15</span></td><td> </td><td class="rblock">   11. Informative References  . . . . . . . . . . . . . . . . . . .  <span class="insert">16</span></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="lblock">   Appendix A.  Changes between revisions  . . . . . . . . . . . . .  <span class="delete">15</span></td><td> </td><td class="rblock">   Appendix A.  Changes between revisions  . . . . . . . . . . . . .  <span class="insert">16</span></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="lblock">   Appendix B.  Example of NETCONF message . . . . . . . . . . . . .  <span class="delete">15</span></td><td> </td><td class="rblock">   Appendix B.  Example of NETCONF message . . . . . . . . . . . . .  <span class="insert">17</span></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="lblock">   Acknowledgements  . . . . . . . . . . . . . . . . . . . . . . . .  <span class="delete">16</span></td><td> </td><td class="rblock">   Acknowledgements  . . . . . . . . . . . . . . . . . . . . . . . .  <span class="insert">17</span></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="lblock">   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  <span class="delete">16</span></td><td> </td><td class="rblock">   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  <span class="insert">17</span></td><td class="lineno"></td></tr>
+      <tr><td class="lineno"></td><td class="lblock">   Acknowledgements  . . . . . . . . . . . . . . . . . . . . . . . .  <span class="delete">17</span></td><td> </td><td class="rblock">   Acknowledgements  . . . . . . . . . . . . . . . . . . . . . . . .  <span class="insert">18</span></td><td class="lineno"></td></tr>
+      <tr><td class="lineno"></td><td class="lblock">   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  <span class="delete">17</span></td><td> </td><td class="rblock">   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  <span class="insert">18</span></td><td class="lineno"></td></tr>
       <tr><td class="lineno"></td><td class="left"></td><td> </td><td class="right"></td><td class="lineno"></td></tr>
       <tr><td class="lineno"></td><td class="left">1.  Introduction</td><td> </td><td class="right">1.  Introduction</td><td class="lineno"></td></tr>
       <tr><td class="lineno"></td><td class="left"></td><td> </td><td class="right"></td><td class="lineno"></td></tr>
@@ -199,96 +173,7 @@ document.onkeydown = function(e) {
       <tr><td class="lineno"></td><td class="left">   disrupt other services.  To cover the last two points, it is</td><td> </td><td class="right">   disrupt other services.  To cover the last two points, it is</td><td class="lineno"></td></tr>
       <tr><td class="lineno"></td><td class="left">   imperative to understand the cause of the problematic configuration</td><td> </td><td class="right">   imperative to understand the cause of the problematic configuration</td><td class="lineno"></td></tr>
       <tr><td class="lineno"></td><td class="left"></td><td> </td><td class="right"></td><td class="lineno"></td></tr>
-      <tr id="part-4" class="change" ><td></td><th><small>skipping to change at</small><a href="#part-4"><em> page 5, line 24<span class="hide"> &para;</span></em></a></th><th> </th><th><small>skipping to change at</small><a href="#part-4"><em> page 5, line 24<span class="hide"> &para;</span></em></a></th><td></td></tr>
-      <tr><td class="lineno"></td><td class="left">   find, in the orchestrator, the latest (set of of) service request(s)</td><td> </td><td class="right">   find, in the orchestrator, the latest (set of of) service request(s)</td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left">   that triggered the configuration modification.  Whether this/those</td><td> </td><td class="right">   that triggered the configuration modification.  Whether this/those</td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left">   service request(s) are actually the root cause needs to be</td><td> </td><td class="right">   service request(s) are actually the root cause needs to be</td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left">   investigated.  However, they are a good starting point for</td><td> </td><td class="right">   investigated.  However, they are a good starting point for</td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left">   troubleshooting, post-mortem analysis, and in the end the closed loop</td><td> </td><td class="right">   troubleshooting, post-mortem analysis, and in the end the closed loop</td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left">   automation, which is absolutely required for self-healing networks.</td><td> </td><td class="right">   automation, which is absolutely required for self-healing networks.</td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left"></td><td> </td><td class="right"></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left">3.2.  Concurrent NMS Configuration</td><td> </td><td class="right">3.2.  Concurrent NMS Configuration</td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left"></td><td> </td><td class="right"></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left">   Building on the previous use case is the situation where two NMS's,</td><td> </td><td class="right">   Building on the previous use case is the situation where two NMS's,</td><td class="lineno"></td></tr>
-      <tr id="diff0009"><td></td></tr>
-      <tr><td class="lineno"></td><td class="lblock">   unaware of <span class="delete">the </span>each other, are configuring a common router, each</td><td> </td><td class="rblock">   unaware of each other, are configuring a common router, each</td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left">   believing that they are the only NMS for the common router.  So one</td><td> </td><td class="right">   believing that they are the only NMS for the common router.  So one</td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left">   configuration executed by the NMS1 is overwritten by the NMS2, which</td><td> </td><td class="right">   configuration executed by the NMS1 is overwritten by the NMS2, which</td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left">   in turn is overwritten by NMS1, etc.</td><td> </td><td class="right">   in turn is overwritten by NMS1, etc.</td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left"></td><td> </td><td class="right"></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left">3.3.  Conflicting Intents</td><td> </td><td class="right">3.3.  Conflicting Intents</td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left"></td><td> </td><td class="right"></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left">   Autonomous networks will be solved first by assuring intent per</td><td> </td><td class="right">   Autonomous networks will be solved first by assuring intent per</td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left">   specific domain; for example data center, core, cloud, etc.  This</td><td> </td><td class="right">   specific domain; for example data center, core, cloud, etc.  This</td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left">   last use case is a more specific "Concurrent NMS configuration" use</td><td> </td><td class="right">   last use case is a more specific "Concurrent NMS configuration" use</td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left">   case where assuring domain intent breaks the entire end to end</td><td> </td><td class="right">   case where assuring domain intent breaks the entire end to end</td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left"></td><td> </td><td class="right"></td><td class="lineno"></td></tr>
-      <tr id="part-5" class="change" ><td></td><th><small>skipping to change at</small><a href="#part-5"><em> page 8, line 33<span class="hide"> &para;</span></em></a></th><th> </th><th><small>skipping to change at</small><a href="#part-5"><em> page 8, line 33<span class="hide"> &para;</span></em></a></th><td></td></tr>
-      <tr><td class="lineno"></td><td class="left">      +----------+                                       +----+</td><td> </td><td class="right">      +----------+                                       +----+</td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left"></td><td> </td><td class="right"></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left">        Figure 2: Example of Configuration Tracing. tr: trace-id, C:</td><td> </td><td class="right">        Figure 2: Example of Configuration Tracing. tr: trace-id, C:</td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left">      Controller, O: orchestrator.  The number between square brackets</td><td> </td><td class="right">      Controller, O: orchestrator.  The number between square brackets</td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left">                    refer to steps in the listing below.</td><td> </td><td class="right">                    refer to steps in the listing below.</td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left"></td><td> </td><td class="right"></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left">   The steps for a software to trace a configuration modification in a</td><td> </td><td class="right">   The steps for a software to trace a configuration modification in a</td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left">   Network Equipment back to a service request are illustrated in</td><td> </td><td class="right">   Network Equipment back to a service request are illustrated in</td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left">   Figure 2.  They are detailed below.</td><td> </td><td class="right">   Figure 2.  They are detailed below.</td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left"></td><td> </td><td class="right"></td><td class="lineno"></td></tr>
-      <tr id="diff0010"><td></td></tr>
-      <tr><td class="lineno"></td><td class="lblock">   1.  The Anomaly Detection System (ADS) identifies the commit<span class="delete"> </span>id that</td><td> </td><td class="rblock">   1.  The Anomaly Detection System (ADS) identifies the commit<span class="insert">-</span>id that</td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left">       created an issue, for instance by looking for the last commit-id</td><td> </td><td class="right">       created an issue, for instance by looking for the last commit-id</td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left">       occurring before the issue was detected.  The ADS queries the NE</td><td> </td><td class="right">       occurring before the issue was detected.  The ADS queries the NE</td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left">       for the trace id and client id associated to the commit-id.</td><td> </td><td class="right">       for the trace id and client id associated to the commit-id.</td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left"></td><td> </td><td class="right"></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left">   2.  The ADS receives the trace-id and the client-id.  In Figure 2,</td><td> </td><td class="right">   2.  The ADS receives the trace-id and the client-id.  In Figure 2,</td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left">       that step would receive the trace-id tr-1 and the id of the</td><td> </td><td class="right">       that step would receive the trace-id tr-1 and the id of the</td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left">       Controller as a result.  If there is no associated client-id, the</td><td> </td><td class="right">       Controller as a result.  If there is no associated client-id, the</td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left">       change was not done by a client compatible with the present</td><td> </td><td class="right">       change was not done by a client compatible with the present</td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left">       draft, and the investigation stops here.</td><td> </td><td class="right">       draft, and the investigation stops here.</td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left"></td><td> </td><td class="right"></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left"></td><td> </td><td class="right"></td><td class="lineno"></td></tr>
-      <tr id="part-6" class="change" ><td></td><th><small>skipping to change at</small><a href="#part-6"><em> page 11, line 11<span class="hide"> &para;</span></em></a></th><th> </th><th><small>skipping to change at</small><a href="#part-6"><em> page 11, line 11<span class="hide"> &para;</span></em></a></th><td></td></tr>
-      <tr><td class="lineno"></td><td class="left">        network for the sake of automated correlation between</td><td> </td><td class="right">        network for the sake of automated correlation between</td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left">        configuration changes and the external request that triggered</td><td> </td><td class="right">        configuration changes and the external request that triggered</td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left">        that change.</td><td> </td><td class="right">        that change.</td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left"></td><td> </td><td class="right"></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left">        The module stores the identifier of the trace, if any, that</td><td> </td><td class="right">        The module stores the identifier of the trace, if any, that</td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left">        triggered the change in a device. If that trace-id was provided</td><td> </td><td class="right">        triggered the change in a device. If that trace-id was provided</td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left">        by a client, (i.e. not created locally by the server), the id</td><td> </td><td class="right">        by a client, (i.e. not created locally by the server), the id</td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left">        of that client is stored as well to indicated which client</td><td> </td><td class="right">        of that client is stored as well to indicated which client</td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left">        triggered the configuration change.</td><td> </td><td class="right">        triggered the configuration change.</td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left"></td><td> </td><td class="right"></td><td class="lineno"></td></tr>
-      <tr id="diff0011"><td></td></tr>
-      <tr><td class="lineno"></td><td class="lblock">        Copyright (c) 202<span class="delete">2</span> IETF Trust and the persons identified as</td><td> </td><td class="rblock">        Copyright (c) 202<span class="insert">5</span> IETF Trust and the persons identified as</td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left">        authors of the code.  All rights reserved.</td><td> </td><td class="right">        authors of the code.  All rights reserved.</td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left"></td><td> </td><td class="right"></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left">        Redistribution and use in source and binary forms, with or</td><td> </td><td class="right">        Redistribution and use in source and binary forms, with or</td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left">        without modification, is permitted pursuant to, and subject</td><td> </td><td class="right">        without modification, is permitted pursuant to, and subject</td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left">        to the license terms contained in, the Revised BSD License</td><td> </td><td class="right">        to the license terms contained in, the Revised BSD License</td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left">        set forth in Section 4.c of the IETF Trust's Legal Provisions</td><td> </td><td class="right">        set forth in Section 4.c of the IETF Trust's Legal Provisions</td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left">        Relating to IETF Documents</td><td> </td><td class="right">        Relating to IETF Documents</td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left">        (https://trustee.ietf.org/license-info).</td><td> </td><td class="right">        (https://trustee.ietf.org/license-info).</td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left">        This version of this YANG module is part of RFC XXXX; see the</td><td> </td><td class="right">        This version of this YANG module is part of RFC XXXX; see the</td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left">        RFC itself for full legal notices.  ";</td><td> </td><td class="right">        RFC itself for full legal notices.  ";</td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left"></td><td> </td><td class="right"></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left">     revision 2022-10-20 {</td><td> </td><td class="right">     revision 2022-10-20 {</td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left">       description</td><td> </td><td class="right">       description</td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left">         "Initial revision";</td><td> </td><td class="right">         "Initial revision";</td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left">       reference</td><td> </td><td class="right">       reference</td><td class="lineno"></td></tr>
-      <tr id="diff0012"><td></td></tr>
-      <tr><td class="lineno"></td><td class="lblock">         "RFC xxxx: <span class="delete">Title to be completed</span>";</td><td> </td><td class="rblock">         "RFC xxxx: <span class="insert">External Trace ID for Configuration Tracing</span>";</td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left">     }</td><td> </td><td class="right">     }</td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left"></td><td> </td><td class="right"></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left">     typedef hex-digits {</td><td> </td><td class="right">     typedef hex-digits {</td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left">       type string {</td><td> </td><td class="right">       type string {</td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left">         pattern '[0-9a-f]*';</td><td> </td><td class="right">         pattern '[0-9a-f]*';</td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left">       }</td><td> </td><td class="right">       }</td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left">       description</td><td> </td><td class="right">       description</td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left">         "A string composed of hexadecimal digits. Digits represented by</td><td> </td><td class="right">         "A string composed of hexadecimal digits. Digits represented by</td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left">          letters are restricted to lowercase so that a single</td><td> </td><td class="right">          letters are restricted to lowercase so that a single</td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left">          representation of a given value is allowed. This enables using</td><td> </td><td class="right">          representation of a given value is allowed. This enables using</td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left"></td><td> </td><td class="right"></td><td class="lineno"></td></tr>
-      <tr id="part-7" class="change" ><td></td><th><small>skipping to change at</small><a href="#part-7"><em> page 13, line 41<span class="hide"> &para;</span></em></a></th><th> </th><th><small>skipping to change at</small><a href="#part-7"><em> page 13, line 41<span class="hide"> &para;</span></em></a></th><td></td></tr>
+      <tr id="part-4" class="change" ><td></td><th><small>skipping to change at</small><a href="#part-4"><em> page 13, line 41<span class="hide"> &para;</span></em></a></th><th> </th><th><small>skipping to change at</small><a href="#part-4"><em> page 13, line 41<span class="hide"> &para;</span></em></a></th><td></td></tr>
       <tr><td class="lineno"></td><td class="left">              This data node is present only when the configuration was</td><td> </td><td class="right">              This data node is present only when the configuration was</td><td class="lineno"></td></tr>
       <tr><td class="lineno"></td><td class="left">              pushed by a compatible system.";</td><td> </td><td class="right">              pushed by a compatible system.";</td><td class="lineno"></td></tr>
       <tr><td class="lineno"></td><td class="left">         }</td><td> </td><td class="right">         }</td><td class="lineno"></td></tr>
@@ -299,69 +184,43 @@ document.onkeydown = function(e) {
       <tr><td class="lineno"></td><td class="left"></td><td> </td><td class="right"></td><td class="lineno"></td></tr>
       <tr><td class="lineno"></td><td class="left">6.  Security Considerations</td><td> </td><td class="right">6.  Security Considerations</td><td class="lineno"></td></tr>
       <tr><td class="lineno"></td><td class="left"></td><td> </td><td class="right"></td><td class="lineno"></td></tr>
-      <tr id="diff0013"><td></td></tr>
-      <tr><td class="lineno"></td><td class="lblock"></td><td> </td><td class="rblock">   <span class="insert">The YANG module specified in this document defines a schema for data</span></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="lblock"></td><td> </td><td class="rblock"><span class="insert">   that is designed to be accessed via network management protocols such</span></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="lblock"></td><td> </td><td class="rblock"><span class="insert">   as NETCONF [RFC6241] or RESTCONF [RFC8040].  The lowest NETCONF layer</span></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="lblock"></td><td> </td><td class="rblock"><span class="insert">   is the secure transport layer, and the mandatory-to-implement secure</span></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="lblock"></td><td> </td><td class="rblock"><span class="insert">   transport is Secure Shell (SSH) [RFC6242].  The lowest RESTCONF layer</span></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="lblock"></td><td> </td><td class="rblock"><span class="insert">   is HTTPS, and the mandatory-to-implement secure transport is TLS</span></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="lblock"></td><td> </td><td class="rblock"><span class="insert">   [RFC8446].</span></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="lblock"></td><td> </td><td class="rblock"><span class="insert"></span></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="lblock"></td><td> </td><td class="rblock"><span class="insert">   The Network Configuration Access Control Model (NACM) [RFC8341]</span></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="lblock"></td><td> </td><td class="rblock"><span class="insert">   provides the means to restrict access for particular NETCONF or</span></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="lblock"></td><td> </td><td class="rblock"><span class="insert">   RESTCONF users to a preconfigured subset of all available NETCONF or</span></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="lblock"></td><td> </td><td class="rblock"><span class="insert">   RESTCONF protocol operations and content.</span></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="lblock"></td><td> </td><td class="rblock"><span class="insert"></span></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="lblock"></td><td> </td><td class="rblock"><span class="insert">   Some of the readable data nodes in this YANG module may be considered</span></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="lblock"></td><td> </td><td class="rblock"><span class="insert">   sensitive or vulnerable in some network environments.  It is thus</span></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="lblock"></td><td> </td><td class="rblock"><span class="insert">   important to control read access (e.g., via get, get-config, or</span></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="lblock"></td><td> </td><td class="rblock"><span class="insert">   notification) to these data nodes.  These are the subtrees and data</span></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="lblock"></td><td> </td><td class="rblock"><span class="insert">   nodes and their sensitivity/vulnerability:</span></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="lblock"></td><td> </td><td class="rblock"><span class="insert"></span></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="lblock"></td><td> </td><td class="rblock"><span class="insert">   *  external-transactions-id/configuration-change exposes information</span></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="lblock"></td><td> </td><td class="rblock"><span class="insert">      about which user or external system can configure the device and</span></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="lblock"></td><td> </td><td class="rblock"><span class="insert">      could help an attacker to send its own configuration to the</span></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="lblock"></td><td> </td><td class="rblock"><span class="insert">      device.  It could also give some information about the</span></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="lblock"></td><td> </td><td class="rblock"><span class="insert">      architecture of the configuration, i.e. what are the controllers</span></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="lblock"></td><td> </td><td class="rblock"><span class="insert">      and the orchestrators.</span></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="lblock"></td><td> </td><td class="rblock">                                                                         </td><td class="lineno"></td></tr>
+      <tr id="diff0008"><td></td></tr>
+      <tr><td class="lineno"></td><td class="lblock">   The <span class="delete">YANG</span> module <span class="delete">specified in this document</span> defines a <span class="delete">schema for</span> data</td><td> </td><td class="rblock">   <span class="insert">This section is modeled after the template described in Section 3.7</span></td><td class="lineno"></td></tr>
+      <tr><td class="lineno"></td><td class="lblock">   that is designed to be accessed via <span class="delete">network</span> management <span class="delete">protocols</span> such</td><td> </td><td class="rblock"><span class="insert">   of [I-D.ietf-netmod-rfc8407bis].</span></td><td class="lineno"></td></tr>
+      <tr><td class="lineno"></td><td class="lblock">   as NETCONF [RFC6241] <span class="delete">or RESTCONF [RFC8040].  The lowest NETCONF layer</span></td><td> </td><td class="rblock">                                                                         </td><td class="lineno"></td></tr>
+      <tr><td class="lineno"></td><td class="lblock"><span class="delete">   is the secure transport layer,</span> and <span class="delete">the mandatory-to-implement</span> secure</td><td> </td><td class="rblock">   The <span class="insert">"ietf-external-transaction-id"</span> module defines a data <span class="insert">model</span> that</td><td class="lineno"></td></tr>
+      <tr><td class="lineno"></td><td class="lblock">   transport <span class="delete">is Secure Shell (SSH) [RFC6242].  The lowest RESTCONF</span> layer</td><td> </td><td class="rblock">   is designed to be accessed via <span class="insert">YANG-based</span> management <span class="insert">protocols,</span> such</td><td class="lineno"></td></tr>
+      <tr><td class="lineno"></td><td class="lblock">   <span class="delete">is HTTPS, and the mandatory-to-implement secure transport is</span> TLS</td><td> </td><td class="rblock">   as NETCONF [RFC6241] and <span class="insert">RESTCONF[RFC8040].  These protocols have to</span></td><td class="lineno"></td></tr>
+      <tr><td class="lineno"></td><td class="lblock">   <span class="delete">[RFC8446].</span></td><td> </td><td class="rblock"><span class="insert">   use a</span> secure transport layer <span class="insert">(e.g., SSH [RFC6242],</span> TLS <span class="insert">[RFC8446] and</span></td><td class="lineno"></td></tr>
+      <tr><td class="lineno"></td><td class="lblock"></td><td> </td><td class="rblock"><span class="insert">   QUIC [RFC9000]) and have to use mutual authentication.</span></td><td class="lineno"></td></tr>
+      <tr><td class="lineno"></td><td class="left"></td><td> </td><td class="right"></td><td class="lineno"></td></tr>
+      <tr><td class="lineno"></td><td class="left">   The Network Configuration Access Control Model (NACM) [RFC8341]</td><td> </td><td class="right">   The Network Configuration Access Control Model (NACM) [RFC8341]</td><td class="lineno"></td></tr>
+      <tr><td class="lineno"></td><td class="left">   provides the means to restrict access for particular NETCONF or</td><td> </td><td class="right">   provides the means to restrict access for particular NETCONF or</td><td class="lineno"></td></tr>
+      <tr><td class="lineno"></td><td class="left">   RESTCONF users to a preconfigured subset of all available NETCONF or</td><td> </td><td class="right">   RESTCONF users to a preconfigured subset of all available NETCONF or</td><td class="lineno"></td></tr>
+      <tr><td class="lineno"></td><td class="left">   RESTCONF protocol operations and content.</td><td> </td><td class="right">   RESTCONF protocol operations and content.</td><td class="lineno"></td></tr>
+      <tr><td class="lineno"></td><td class="left"></td><td> </td><td class="right"></td><td class="lineno"></td></tr>
+      <tr><td class="lineno"></td><td class="left">   Some of the readable data nodes in this YANG module may be considered</td><td> </td><td class="right">   Some of the readable data nodes in this YANG module may be considered</td><td class="lineno"></td></tr>
+      <tr><td class="lineno"></td><td class="left">   sensitive or vulnerable in some network environments.  It is thus</td><td> </td><td class="right">   sensitive or vulnerable in some network environments.  It is thus</td><td class="lineno"></td></tr>
+      <tr><td class="lineno"></td><td class="left">   important to control read access (e.g., via get, get-config, or</td><td> </td><td class="right">   important to control read access (e.g., via get, get-config, or</td><td class="lineno"></td></tr>
+      <tr id="diff0009"><td></td></tr>
+      <tr><td class="lineno"></td><td class="lblock">   notification) to these data nodes.  <span class="delete">These are</span> the subtrees and data</td><td> </td><td class="rblock">   notification) to these data nodes.  <span class="insert">Specifically,</span> the <span class="insert">following</span></td><td class="lineno"></td></tr>
+      <tr><td class="lineno"></td><td class="lblock">   nodes <span class="delete">and their sensitivity/vulnerability:</span></td><td> </td><td class="rblock">   subtrees and data nodes <span class="insert">have particular sensitivities/</span></td><td class="lineno"></td></tr>
+      <tr><td class="lineno"></td><td class="lblock"></td><td> </td><td class="rblock"><span class="insert">   vulnerabilities:</span></td><td class="lineno"></td></tr>
+      <tr><td class="lineno"></td><td class="left"></td><td> </td><td class="right"></td><td class="lineno"></td></tr>
+      <tr><td class="lineno"></td><td class="left">   *  external-transactions-id/configuration-change exposes information</td><td> </td><td class="right">   *  external-transactions-id/configuration-change exposes information</td><td class="lineno"></td></tr>
+      <tr><td class="lineno"></td><td class="left">      about which user or external system can configure the device and</td><td> </td><td class="right">      about which user or external system can configure the device and</td><td class="lineno"></td></tr>
+      <tr><td class="lineno"></td><td class="left">      could help an attacker to send its own configuration to the</td><td> </td><td class="right">      could help an attacker to send its own configuration to the</td><td class="lineno"></td></tr>
+      <tr><td class="lineno"></td><td class="left">      device.  It could also give some information about the</td><td> </td><td class="right">      device.  It could also give some information about the</td><td class="lineno"></td></tr>
+      <tr><td class="lineno"></td><td class="left">      architecture of the configuration, i.e. what are the controllers</td><td> </td><td class="right">      architecture of the configuration, i.e. what are the controllers</td><td class="lineno"></td></tr>
+      <tr><td class="lineno"></td><td class="left">      and the orchestrators.</td><td> </td><td class="right">      and the orchestrators.</td><td class="lineno"></td></tr>
+      <tr><td class="lineno"></td><td class="left"></td><td> </td><td class="right"></td><td class="lineno"></td></tr>
       <tr><td class="lineno"></td><td class="left">7.  IANA Considerations</td><td> </td><td class="right">7.  IANA Considerations</td><td class="lineno"></td></tr>
       <tr><td class="lineno"></td><td class="left"></td><td> </td><td class="right"></td><td class="lineno"></td></tr>
-      <tr id="diff0014"><td></td></tr>
-      <tr><td class="lineno"></td><td class="lblock">   <span class="delete">This document includes no request</span> to <span class="delete">IANA.</span></td><td> </td><td class="rblock">   <span class="insert">RFC Ed.: replace XXXX with actual RFC number and remove this note.</span></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="lblock"></td><td> </td><td class="rblock"><span class="insert"></span></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="lblock"></td><td> </td><td class="rblock"><span class="insert">   IANA is requested</span> to <span class="insert">register the following URI in the "ns"</span></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="lblock"></td><td> </td><td class="rblock"><span class="insert">   subregistry within the "IETF XML Registry" [RFC3688]:</span></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="lblock"></td><td> </td><td class="rblock"><span class="insert"></span></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="lblock"></td><td> </td><td class="rblock"><span class="insert">           URI: urn:ietf:params:xml:ns:yang:ietf-external-transaction-id</span></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="lblock"></td><td> </td><td class="rblock"><span class="insert">           Registrant Contact:  The IESG.</span></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="lblock"></td><td> </td><td class="rblock"><span class="insert">           XML: N/A; the requested URI is an XML namespace.</span></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="lblock"></td><td> </td><td class="rblock"><span class="insert"></span></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="lblock"></td><td> </td><td class="rblock"><span class="insert">   IANA is requested to register the following YANG module in the "YANG</span></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="lblock"></td><td> </td><td class="rblock"><span class="insert">   Module Names" subregistry [RFC6020] within the "YANG Parameters"</span></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="lblock"></td><td> </td><td class="rblock"><span class="insert">   registry.</span></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="lblock"></td><td> </td><td class="rblock"><span class="insert"></span></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="lblock"></td><td> </td><td class="rblock"><span class="insert">        Name: ietf-external-transaction-id</span></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="lblock"></td><td> </td><td class="rblock"><span class="insert">        Maintained by IANA?  N</span></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="lblock"></td><td> </td><td class="rblock"><span class="insert">        Namespace: urn:ietf:params:xml:ns:yang:ietf-external-transaction-id</span></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="lblock"></td><td> </td><td class="rblock"><span class="insert">        Prefix: ext-txid</span></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="lblock"></td><td> </td><td class="rblock"><span class="insert">        Reference: RFC XXXX</span></td><td class="lineno"></td></tr>
       <tr><td class="lineno"></td><td class="left"></td><td> </td><td class="right"></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left">8.  Contributors</td><td> </td><td class="right">8.  Contributors</td><td class="lineno"></td></tr>
+      <tr id="part-5" class="change" ><td></td><th><small>skipping to change at</small><a href="#part-5"><em> page 15, line 9<span class="hide"> &para;</span></em></a></th><th> </th><th><small>skipping to change at</small><a href="#part-5"><em> page 15, line 11<span class="hide"> &para;</span></em></a></th><td></td></tr>
+      <tr><td class="lineno"></td><td class="left">   This section is to be removed before publishing as an RFC.</td><td> </td><td class="right">   This section is to be removed before publishing as an RFC.</td><td class="lineno"></td></tr>
       <tr><td class="lineno"></td><td class="left"></td><td> </td><td class="right"></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left">9.  Open Issues / TODO</td><td> </td><td class="right">9.  Open Issues / TODO</td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left"></td><td> </td><td class="right"></td><td class="lineno"></td></tr>
-      <tr id="diff0015"><td></td></tr>
-      <tr><td class="lineno"></td><td class="lblock">   <span class="delete">*  The model and usage presented here focuses of the problem of</span></td><td> </td><td class="rblock">   <span class="insert">This section is</span> to be <span class="insert">removed before publishing as an RFC.</span></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="lblock"><span class="delete">      tracing a configuration change back</span> to <span class="delete">its sources.  As it relies</span></td><td> </td><td class="rblock"><span class="insert"></span></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="lblock"><span class="delete">      on [W3C-Trace-Context], we could also use associated mechanisms</span></td><td> </td><td class="rblock"><span class="insert">   None</span></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="lblock"><span class="delete">      for collecting and representing trace data such as OTLP.  For</span></td><td> </td><td class="rblock"></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="lblock"><span class="delete">      instance, we could define a YANG model matching the OTLP</span></td><td> </td><td class="rblock"></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="lblock"><span class="delete">      protobuffer definition (draft: https://github.com/rgaglian/ietf-</span></td><td> </td><td class="rblock"></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="lblock"><span class="delete">      netconf-trace-context-extension/blob/main/ietf-netconf-otlp-</span></td><td> </td><td class="rblock"></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="lblock"><span class="delete">      protocol.tree).  In that case the client-id could</span> be <span class="delete">a specific</span></td><td> </td><td class="rblock"></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="lblock"><span class="delete">      attribute of the spans list.</span></td><td> </td><td class="rblock"></td><td class="lineno"></td></tr>
+      <tr><td class="lineno"></td><td class="left">   None</td><td> </td><td class="right">   None</td><td class="lineno"></td></tr>
       <tr><td class="lineno"></td><td class="left"></td><td> </td><td class="right"></td><td class="lineno"></td></tr>
       <tr><td class="lineno"></td><td class="left">10.  Normative References</td><td> </td><td class="right">10.  Normative References</td><td class="lineno"></td></tr>
       <tr><td class="lineno"></td><td class="left"></td><td> </td><td class="right"></td><td class="lineno"></td></tr>
@@ -369,19 +228,19 @@ document.onkeydown = function(e) {
       <tr><td class="lineno"></td><td class="left">              Gagliano, R., Larsson, K., and J. Lindblad, "RESTCONF</td><td> </td><td class="right">              Gagliano, R., Larsson, K., and J. Lindblad, "RESTCONF</td><td class="lineno"></td></tr>
       <tr><td class="lineno"></td><td class="left">              Extension to Support Trace Context Headers", Work in</td><td> </td><td class="right">              Extension to Support Trace Context Headers", Work in</td><td class="lineno"></td></tr>
       <tr><td class="lineno"></td><td class="left">              Progress, Internet-Draft, draft-ietf-netconf-restconf-</td><td> </td><td class="right">              Progress, Internet-Draft, draft-ietf-netconf-restconf-</td><td class="lineno"></td></tr>
-      <tr id="diff0016"><td></td></tr>
-      <tr><td class="lineno"></td><td class="lblock">              <span class="delete">trace-ctx-headers-02, 25 September</span> 2024,</td><td> </td><td class="rblock">              <span class="insert">trace-ctx-headers-06, 12 December</span> 2024,</td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="lblock">              <span class="delete">&lt;https://datatracker.ietf.org/doc/html/draft-ietf-netconf-</span></td><td> </td><td class="rblock">              <span class="insert">&lt;https://datatracker.ietf.org/api/v1/doc/document/draft-</span></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="lblock"><span class="delete">              restconf-trace-ctx-headers-02&gt;.</span></td><td> </td><td class="rblock"><span class="insert">              ietf-netconf-restconf-trace-ctx-headers/&gt;.</span></td><td class="lineno"></td></tr>
+      <tr id="diff0010"><td></td></tr>
+      <tr><td class="lineno"></td><td class="lblock">              trace-ctx-headers-06, <span class="delete">12 December 2024,</span></td><td> </td><td class="rblock">              trace-ctx-headers-06, <span class="insert">3 March 2025,</span></td><td class="lineno"></td></tr>
+      <tr><td class="lineno"></td><td class="lblock"><span class="delete">              &lt;https://datatracker.ietf.org/api/v1/doc/document/draft-</span></td><td> </td><td class="rblock"><span class="insert">              &lt;https://datatracker.ietf.org/doc/html/draft-ietf-netconf-</span></td><td class="lineno"></td></tr>
+      <tr><td class="lineno"></td><td class="lblock"><span class="delete">              ietf-netconf-restconf-trace-ctx-headers/&gt;.</span></td><td> </td><td class="rblock"><span class="insert">              restconf-trace-ctx-headers-06&gt;.</span></td><td class="lineno"></td></tr>
       <tr><td class="lineno"></td><td class="left"></td><td> </td><td class="right"></td><td class="lineno"></td></tr>
       <tr><td class="lineno"></td><td class="left">   [I-D.ietf-netconf-trace-ctx-extension]</td><td> </td><td class="right">   [I-D.ietf-netconf-trace-ctx-extension]</td><td class="lineno"></td></tr>
       <tr><td class="lineno"></td><td class="left">              Gagliano, R., Larsson, K., and J. Lindblad, "NETCONF</td><td> </td><td class="right">              Gagliano, R., Larsson, K., and J. Lindblad, "NETCONF</td><td class="lineno"></td></tr>
       <tr><td class="lineno"></td><td class="left">              Extension to support Trace Context propagation", Work in</td><td> </td><td class="right">              Extension to support Trace Context propagation", Work in</td><td class="lineno"></td></tr>
       <tr><td class="lineno"></td><td class="left">              Progress, Internet-Draft, draft-ietf-netconf-trace-ctx-</td><td> </td><td class="right">              Progress, Internet-Draft, draft-ietf-netconf-trace-ctx-</td><td class="lineno"></td></tr>
-      <tr id="diff0017"><td></td></tr>
-      <tr><td class="lineno"></td><td class="lblock">              <span class="delete">extension-01, 8 July 2024,</span></td><td> </td><td class="rblock">              <span class="insert">extension-04, 3 March 2025,</span></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="lblock"><span class="delete">              &lt;https://datatracker.ietf.org/doc/html/draft-ietf-netconf-</span></td><td> </td><td class="rblock"><span class="insert">              &lt;https://datatracker.ietf.org/api/v1/doc/document/draft-</span></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="lblock"><span class="delete">              trace-ctx-extension-01&gt;.</span></td><td> </td><td class="rblock"><span class="insert">              ietf-netconf-trace-ctx-extension/&gt;.</span></td><td class="lineno"></td></tr>
+      <tr><td class="lineno"></td><td class="left">              extension-04, 3 March 2025,</td><td> </td><td class="right">              extension-04, 3 March 2025,</td><td class="lineno"></td></tr>
+      <tr id="diff0011"><td></td></tr>
+      <tr><td class="lineno"></td><td class="lblock">              <span class="delete">&lt;https://datatracker.ietf.org/api/v1/doc/document/draft-</span></td><td> </td><td class="rblock">              <span class="insert">&lt;https://datatracker.ietf.org/doc/html/draft-ietf-netconf-</span></td><td class="lineno"></td></tr>
+      <tr><td class="lineno"></td><td class="lblock"><span class="delete">              ietf-netconf-trace-ctx-extension/&gt;.</span></td><td> </td><td class="rblock"><span class="insert">              trace-ctx-extension-04&gt;.</span></td><td class="lineno"></td></tr>
       <tr><td class="lineno"></td><td class="left"></td><td> </td><td class="right"></td><td class="lineno"></td></tr>
       <tr><td class="lineno"></td><td class="left">   [I-D.ietf-netconf-transaction-id]</td><td> </td><td class="right">   [I-D.ietf-netconf-transaction-id]</td><td class="lineno"></td></tr>
       <tr><td class="lineno"></td><td class="left">              Lindblad, J., "Transaction ID Mechanism for NETCONF", Work</td><td> </td><td class="right">              Lindblad, J., "Transaction ID Mechanism for NETCONF", Work</td><td class="lineno"></td></tr>
@@ -392,41 +251,11 @@ document.onkeydown = function(e) {
       <tr><td class="lineno"></td><td class="left"></td><td> </td><td class="right"></td><td class="lineno"></td></tr>
       <tr><td class="lineno"></td><td class="left">   [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate</td><td> </td><td class="right">   [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate</td><td class="lineno"></td></tr>
       <tr><td class="lineno"></td><td class="left">              Requirement Levels", BCP 14, RFC 2119,</td><td> </td><td class="right">              Requirement Levels", BCP 14, RFC 2119,</td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left">              DOI 10.17487/RFC2119, March 1997,</td><td> </td><td class="right">              DOI 10.17487/RFC2119, March 1997,</td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left">              &lt;https://www.rfc-editor.org/info/rfc2119&gt;.</td><td> </td><td class="right">              &lt;https://www.rfc-editor.org/info/rfc2119&gt;.</td><td class="lineno"></td></tr>
       <tr><td class="lineno"></td><td class="left"></td><td> </td><td class="right"></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left">   [RFC6241]  Enns, R., Ed., Bjorklund, M., Ed., Schoenwaelder, J., Ed.,</td><td> </td><td class="right">   [RFC6241]  Enns, R., Ed., Bjorklund, M., Ed., Schoenwaelder, J., Ed.,</td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left">              and A. Bierman, Ed., "Network Configuration Protocol</td><td> </td><td class="right">              and A. Bierman, Ed., "Network Configuration Protocol</td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left">              (NETCONF)", RFC 6241, DOI 10.17487/RFC6241, June 2011,</td><td> </td><td class="right">              (NETCONF)", RFC 6241, DOI 10.17487/RFC6241, June 2011,</td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left">              &lt;https://www.rfc-editor.org/info/rfc6241&gt;.</td><td> </td><td class="right">              &lt;https://www.rfc-editor.org/info/rfc6241&gt;.</td><td class="lineno"></td></tr>
+      <tr id="part-6" class="change" ><td></td><th><small>skipping to change at</small><a href="#part-6"><em> page 16, line 21<span class="hide"> &para;</span></em></a></th><th> </th><th><small>skipping to change at</small><a href="#part-6"><em> page 16, line 25<span class="hide"> &para;</span></em></a></th><td></td></tr>
+      <tr><td class="lineno"></td><td class="left">              Version 1.3", RFC 8446, DOI 10.17487/RFC8446, August 2018,</td><td> </td><td class="right">              Version 1.3", RFC 8446, DOI 10.17487/RFC8446, August 2018,</td><td class="lineno"></td></tr>
+      <tr><td class="lineno"></td><td class="left">              &lt;https://www.rfc-editor.org/info/rfc8446&gt;.</td><td> </td><td class="right">              &lt;https://www.rfc-editor.org/info/rfc8446&gt;.</td><td class="lineno"></td></tr>
       <tr><td class="lineno"></td><td class="left"></td><td> </td><td class="right"></td><td class="lineno"></td></tr>
-      <tr id="diff0018"><td></td></tr>
-      <tr><td class="lineno"></td><td class="lblock"></td><td> </td><td class="rblock">   <span class="insert">[RFC6242]  Wasserman, M., "Using the NETCONF Protocol over Secure</span></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="lblock"></td><td> </td><td class="rblock"><span class="insert">              Shell (SSH)", RFC 6242, DOI 10.17487/RFC6242, June 2011,</span></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="lblock"></td><td> </td><td class="rblock"><span class="insert">              &lt;https://www.rfc-editor.org/info/rfc6242&gt;.</span></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="lblock"></td><td> </td><td class="rblock"><span class="insert"></span></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="lblock"></td><td> </td><td class="rblock"><span class="insert">   [RFC8040]  Bierman, A., Bjorklund, M., and K. Watsen, "RESTCONF</span></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="lblock"></td><td> </td><td class="rblock"><span class="insert">              Protocol", RFC 8040, DOI 10.17487/RFC8040, January 2017,</span></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="lblock"></td><td> </td><td class="rblock"><span class="insert">              &lt;https://www.rfc-editor.org/info/rfc8040&gt;.</span></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="lblock"></td><td> </td><td class="rblock">                                                                         </td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left">   [RFC8174]  Leiba, B., "Ambiguity of Uppercase vs Lowercase in RFC</td><td> </td><td class="right">   [RFC8174]  Leiba, B., "Ambiguity of Uppercase vs Lowercase in RFC</td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left">              2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,</td><td> </td><td class="right">              2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,</td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left">              May 2017, &lt;https://www.rfc-editor.org/info/rfc8174&gt;.</td><td> </td><td class="right">              May 2017, &lt;https://www.rfc-editor.org/info/rfc8174&gt;.</td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left"></td><td> </td><td class="right"></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left">   [RFC8340]  Bjorklund, M. and L. Berger, Ed., "YANG Tree Diagrams",</td><td> </td><td class="right">   [RFC8340]  Bjorklund, M. and L. Berger, Ed., "YANG Tree Diagrams",</td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left">              BCP 215, RFC 8340, DOI 10.17487/RFC8340, March 2018,</td><td> </td><td class="right">              BCP 215, RFC 8340, DOI 10.17487/RFC8340, March 2018,</td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left">              &lt;https://www.rfc-editor.org/info/rfc8340&gt;.</td><td> </td><td class="right">              &lt;https://www.rfc-editor.org/info/rfc8340&gt;.</td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left"></td><td> </td><td class="right"></td><td class="lineno"></td></tr>
-      <tr id="diff0019"><td></td></tr>
-      <tr><td class="lineno"></td><td class="lblock"></td><td> </td><td class="rblock">   <span class="insert">[RFC8341]  Bierman, A. and M. Bjorklund, "Network Configuration</span></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="lblock"></td><td> </td><td class="rblock"><span class="insert">              Access Control Model", STD 91, RFC 8341,</span></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="lblock"></td><td> </td><td class="rblock"><span class="insert">              DOI 10.17487/RFC8341, March 2018,</span></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="lblock"></td><td> </td><td class="rblock"><span class="insert">              &lt;https://www.rfc-editor.org/info/rfc8341&gt;.</span></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="lblock"></td><td> </td><td class="rblock"><span class="insert"></span></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="lblock"></td><td> </td><td class="rblock"><span class="insert">   [RFC8446]  Rescorla, E., "The Transport Layer Security (TLS) Protocol</span></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="lblock"></td><td> </td><td class="rblock"><span class="insert">              Version 1.3", RFC 8446, DOI 10.17487/RFC8446, August 2018,</span></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="lblock"></td><td> </td><td class="rblock"><span class="insert">              &lt;https://www.rfc-editor.org/info/rfc8446&gt;.</span></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="lblock"></td><td> </td><td class="rblock">                                                                         </td><td class="lineno"></td></tr>
       <tr><td class="lineno"></td><td class="left">   [W3C-Trace-Context]</td><td> </td><td class="right">   [W3C-Trace-Context]</td><td class="lineno"></td></tr>
       <tr><td class="lineno"></td><td class="left">              "W3C Recommendation on Trace Context", 23 November 2021,</td><td> </td><td class="right">              "W3C Recommendation on Trace Context", 23 November 2021,</td><td class="lineno"></td></tr>
       <tr><td class="lineno"></td><td class="left">              &lt;https://www.w3.org/TR/2021/REC-trace-context-</td><td> </td><td class="right">              &lt;https://www.w3.org/TR/2021/REC-trace-context-</td><td class="lineno"></td></tr>
@@ -434,16 +263,30 @@ document.onkeydown = function(e) {
       <tr><td class="lineno"></td><td class="left"></td><td> </td><td class="right"></td><td class="lineno"></td></tr>
       <tr><td class="lineno"></td><td class="left">11.  Informative References</td><td> </td><td class="right">11.  Informative References</td><td class="lineno"></td></tr>
       <tr><td class="lineno"></td><td class="left"></td><td> </td><td class="right"></td><td class="lineno"></td></tr>
-      <tr id="diff0020"><td></td></tr>
-      <tr><td class="lineno"></td><td class="lblock">   <span class="delete">[RFC8040]  Bierman, A., Bjorklund,</span> M., <span class="delete">and K. Watsen, "RESTCONF</span></td><td> </td><td class="rblock">   <span class="insert">[RFC3688]  Mealling,</span> M., <span class="insert">"The IETF XML Registry", BCP 81,</span> RFC <span class="insert">3688,</span></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="lblock"><span class="delete">              Protocol",</span> RFC <span class="delete">8040,</span> DOI <span class="delete">10.17487/RFC8040,</span> January <span class="delete">2017,</span></td><td> </td><td class="rblock">              DOI <span class="insert">10.17487/RFC3688,</span> January <span class="insert">2004,</span></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="lblock"><span class="delete">              &lt;https://www.rfc-editor.org/info/rfc8040&gt;.</span></td><td> </td><td class="rblock"><span class="insert">              &lt;https://www.rfc-editor.org/info/rfc3688&gt;.</span></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="lblock"></td><td> </td><td class="rblock"><span class="insert"></span></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="lblock"></td><td> </td><td class="rblock"><span class="insert">   [RFC6020]  Bjorklund, M., Ed., "YANG - A Data Modeling Language for</span></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="lblock"></td><td> </td><td class="rblock"><span class="insert">              the Network Configuration Protocol (NETCONF)", RFC 6020,</span></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="lblock"></td><td> </td><td class="rblock"><span class="insert">              DOI 10.17487/RFC6020, October 2010,</span></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="lblock"></td><td> </td><td class="rblock"><span class="insert">              &lt;https://www.rfc-editor.org/info/rfc6020&gt;.</span></td><td class="lineno"></td></tr>
+      <tr id="diff0012"><td></td></tr>
+      <tr><td class="lineno"></td><td class="lblock"></td><td> </td><td class="rblock">   <span class="insert">[I-D.ietf-netmod-rfc8407bis]</span></td><td class="lineno"></td></tr>
+      <tr><td class="lineno"></td><td class="lblock"></td><td> </td><td class="rblock"><span class="insert">              Bierman, A., Boucadair, M., and Q. Wu, "Guidelines for</span></td><td class="lineno"></td></tr>
+      <tr><td class="lineno"></td><td class="lblock"></td><td> </td><td class="rblock"><span class="insert">              Authors and Reviewers of Documents Containing YANG Data</span></td><td class="lineno"></td></tr>
+      <tr><td class="lineno"></td><td class="lblock"></td><td> </td><td class="rblock"><span class="insert">              Models", Work in Progress, Internet-Draft, draft-ietf-</span></td><td class="lineno"></td></tr>
+      <tr><td class="lineno"></td><td class="lblock"></td><td> </td><td class="rblock"><span class="insert">              netmod-rfc8407bis-22, 14 January 2025,</span></td><td class="lineno"></td></tr>
+      <tr><td class="lineno"></td><td class="lblock"></td><td> </td><td class="rblock"><span class="insert">              &lt;https://datatracker.ietf.org/doc/html/draft-ietf-netmod-</span></td><td class="lineno"></td></tr>
+      <tr><td class="lineno"></td><td class="lblock"></td><td> </td><td class="rblock"><span class="insert">              rfc8407bis-22&gt;.</span></td><td class="lineno"></td></tr>
+      <tr><td class="lineno"></td><td class="lblock"></td><td> </td><td class="rblock">                                                                         </td><td class="lineno"></td></tr>
+      <tr><td class="lineno"></td><td class="left">   [RFC3688]  Mealling, M., "The IETF XML Registry", BCP 81, RFC 3688,</td><td> </td><td class="right">   [RFC3688]  Mealling, M., "The IETF XML Registry", BCP 81, RFC 3688,</td><td class="lineno"></td></tr>
+      <tr><td class="lineno"></td><td class="left">              DOI 10.17487/RFC3688, January 2004,</td><td> </td><td class="right">              DOI 10.17487/RFC3688, January 2004,</td><td class="lineno"></td></tr>
+      <tr><td class="lineno"></td><td class="left">              &lt;https://www.rfc-editor.org/info/rfc3688&gt;.</td><td> </td><td class="right">              &lt;https://www.rfc-editor.org/info/rfc3688&gt;.</td><td class="lineno"></td></tr>
       <tr><td class="lineno"></td><td class="left"></td><td> </td><td class="right"></td><td class="lineno"></td></tr>
+      <tr><td class="lineno"></td><td class="left">   [RFC6020]  Bjorklund, M., Ed., "YANG - A Data Modeling Language for</td><td> </td><td class="right">   [RFC6020]  Bjorklund, M., Ed., "YANG - A Data Modeling Language for</td><td class="lineno"></td></tr>
+      <tr><td class="lineno"></td><td class="left">              the Network Configuration Protocol (NETCONF)", RFC 6020,</td><td> </td><td class="right">              the Network Configuration Protocol (NETCONF)", RFC 6020,</td><td class="lineno"></td></tr>
+      <tr><td class="lineno"></td><td class="left">              DOI 10.17487/RFC6020, October 2010,</td><td> </td><td class="right">              DOI 10.17487/RFC6020, October 2010,</td><td class="lineno"></td></tr>
+      <tr><td class="lineno"></td><td class="left">              &lt;https://www.rfc-editor.org/info/rfc6020&gt;.</td><td> </td><td class="right">              &lt;https://www.rfc-editor.org/info/rfc6020&gt;.</td><td class="lineno"></td></tr>
+      <tr><td class="lineno"></td><td class="left"></td><td> </td><td class="right"></td><td class="lineno"></td></tr>
+      <tr id="diff0013"><td></td></tr>
+      <tr><td class="lineno"></td><td class="lblock"></td><td> </td><td class="rblock">   <span class="insert">[RFC9000]  Iyengar, J., Ed. and M. Thomson, Ed., "QUIC: A UDP-Based</span></td><td class="lineno"></td></tr>
+      <tr><td class="lineno"></td><td class="lblock"></td><td> </td><td class="rblock"><span class="insert">              Multiplexed and Secure Transport", RFC 9000,</span></td><td class="lineno"></td></tr>
+      <tr><td class="lineno"></td><td class="lblock"></td><td> </td><td class="rblock"><span class="insert">              DOI 10.17487/RFC9000, May 2021,</span></td><td class="lineno"></td></tr>
+      <tr><td class="lineno"></td><td class="lblock"></td><td> </td><td class="rblock"><span class="insert">              &lt;https://www.rfc-editor.org/info/rfc9000&gt;.</span></td><td class="lineno"></td></tr>
+      <tr><td class="lineno"></td><td class="lblock"></td><td> </td><td class="rblock">                                                                         </td><td class="lineno"></td></tr>
       <tr><td class="lineno"></td><td class="left">   [RFC9417]  Claise, B., Quilbeuf, J., Lopez, D., Voyer, D., and T.</td><td> </td><td class="right">   [RFC9417]  Claise, B., Quilbeuf, J., Lopez, D., Voyer, D., and T.</td><td class="lineno"></td></tr>
       <tr><td class="lineno"></td><td class="left">              Arumugam, "Service Assurance for Intent-Based Networking</td><td> </td><td class="right">              Arumugam, "Service Assurance for Intent-Based Networking</td><td class="lineno"></td></tr>
       <tr><td class="lineno"></td><td class="left">              Architecture", RFC 9417, DOI 10.17487/RFC9417, July 2023,</td><td> </td><td class="right">              Architecture", RFC 9417, DOI 10.17487/RFC9417, July 2023,</td><td class="lineno"></td></tr>
@@ -451,71 +294,27 @@ document.onkeydown = function(e) {
       <tr><td class="lineno"></td><td class="left"></td><td> </td><td class="right"></td><td class="lineno"></td></tr>
       <tr><td class="lineno"></td><td class="left">Appendix A.  Changes between revisions</td><td> </td><td class="right">Appendix A.  Changes between revisions</td><td class="lineno"></td></tr>
       <tr><td class="lineno"></td><td class="left"></td><td> </td><td class="right"></td><td class="lineno"></td></tr>
-      <tr id="diff0021"><td></td></tr>
-      <tr><td class="lineno"></td><td class="lblock"></td><td> </td><td class="rblock">   <span class="insert">This section is to be removed before publishing as an RFC.</span></td><td class="lineno"></td></tr>
+      <tr><td class="lineno"></td><td class="left">   This section is to be removed before publishing as an RFC.</td><td> </td><td class="right">   This section is to be removed before publishing as an RFC.</td><td class="lineno"></td></tr>
+      <tr><td class="lineno"></td><td class="left"></td><td> </td><td class="right"></td><td class="lineno"></td></tr>
+      <tr id="diff0014"><td></td></tr>
+      <tr><td class="lineno"></td><td class="lblock"></td><td> </td><td class="rblock">   <span class="insert">04 -&gt; 05</span></td><td class="lineno"></td></tr>
       <tr><td class="lineno"></td><td class="lblock"></td><td> </td><td class="rblock"><span class="insert"></span></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="lblock"></td><td> </td><td class="rblock"><span class="insert">   03 -&gt; 04</span></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="lblock"></td><td> </td><td class="rblock"><span class="insert"></span></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="lblock"></td><td> </td><td class="rblock"><span class="insert">   *  Add security and IANA considerations</span></td><td class="lineno"></td></tr>
+      <tr><td class="lineno"></td><td class="lblock"></td><td> </td><td class="rblock"><span class="insert">   *  Fix security considerations template</span></td><td class="lineno"></td></tr>
       <tr><td class="lineno"></td><td class="lblock"></td><td> </td><td class="rblock">                                                                         </td><td class="lineno"></td></tr>
+      <tr><td class="lineno"></td><td class="left">   03 -&gt; 04</td><td> </td><td class="right">   03 -&gt; 04</td><td class="lineno"></td></tr>
+      <tr><td class="lineno"></td><td class="left"></td><td> </td><td class="right"></td><td class="lineno"></td></tr>
+      <tr><td class="lineno"></td><td class="left">   *  Add security and IANA considerations</td><td> </td><td class="right">   *  Add security and IANA considerations</td><td class="lineno"></td></tr>
+      <tr><td class="lineno"></td><td class="left"></td><td> </td><td class="right"></td><td class="lineno"></td></tr>
       <tr><td class="lineno"></td><td class="left">   01 -&gt; 02</td><td> </td><td class="right">   01 -&gt; 02</td><td class="lineno"></td></tr>
       <tr><td class="lineno"></td><td class="left"></td><td> </td><td class="right"></td><td class="lineno"></td></tr>
       <tr><td class="lineno"></td><td class="left">   *  Remove YANG specific annotation for the mechanism to pass the</td><td> </td><td class="right">   *  Remove YANG specific annotation for the mechanism to pass the</td><td class="lineno"></td></tr>
       <tr><td class="lineno"></td><td class="left">      client-id.</td><td> </td><td class="right">      client-id.</td><td class="lineno"></td></tr>
       <tr><td class="lineno"></td><td class="left"></td><td> </td><td class="right"></td><td class="lineno"></td></tr>
       <tr><td class="lineno"></td><td class="left">   *  Align with NETCONF Trace context draft.</td><td> </td><td class="right">   *  Align with NETCONF Trace context draft.</td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left"></td><td> </td><td class="right"></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left">   00(WG adoption) -&gt; 01</td><td> </td><td class="right">   00(WG adoption) -&gt; 01</td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left"></td><td> </td><td class="right"></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left">   *  Define mechanism to pass the client-id.</td><td> </td><td class="right">   *  Define mechanism to pass the client-id.</td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left"></td><td> </td><td class="right"></td><td class="lineno"></td></tr>
-      <tr id="part-8" class="change" ><td></td><th><small>skipping to change at</small><a href="#part-8"><em> page 16, line 4<span class="hide"> &para;</span></em></a></th><th> </th><th><small>skipping to change at</small><a href="#part-8"><em> page 17, line 19<span class="hide"> &para;</span></em></a></th><td></td></tr>
-      <tr><td class="lineno"></td><td class="left"></td><td> </td><td class="right"></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left">   00 -&gt; 01</td><td> </td><td class="right">   00 -&gt; 01</td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left"></td><td> </td><td class="right"></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left">   *  Define Parent and Child Transaction</td><td> </td><td class="right">   *  Define Parent and Child Transaction</td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left"></td><td> </td><td class="right"></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left">   *  Context for the "local-commit-id" concept</td><td> </td><td class="right">   *  Context for the "local-commit-id" concept</td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left"></td><td> </td><td class="right"></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left">   *  Feedback from Med, both in text and YANG module</td><td> </td><td class="right">   *  Feedback from Med, both in text and YANG module</td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left"></td><td> </td><td class="right"></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left">Appendix B.  Example of NETCONF message</td><td> </td><td class="right">Appendix B.  Example of NETCONF message</td><td class="lineno"></td></tr>
-      <tr id="diff0022"><td></td></tr>
-      <tr><td class="lineno"></td><td class="lblock"><span class="delete">&lt;rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="1"</span></td><td> </td><td class="rblock"></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="lblock"><span class="delete">     xmlns:w3ctc="urn:ietf:params:xml:ns:netconf:w3ctc:1.0"</span></td><td> </td><td class="rblock"></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="lblock"><span class="delete">     xmlns:ext-txid="urn:ietf:params:xml:ns:yang:ietf-external-transaction-id"</span></td><td> </td><td class="rblock"></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="lblock"><span class="delete">     w3ctc:traceparent=</span></td><td> </td><td class="rblock"></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="lblock"><span class="delete">       "00-4bf92f3577b34da6a3ce929d0e0e4736-00f067aa0ba902b7-01"</span></td><td> </td><td class="rblock"></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="lblock"><span class="delete">     ext-txid:client-id="controller-01"&gt;</span></td><td> </td><td class="rblock"></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="lblock"><span class="delete">  &lt;commit/&gt;</span></td><td> </td><td class="rblock"></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="lblock"><span class="delete">&lt;/rpc&gt;</span></td><td> </td><td class="rblock"></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left"></td><td> </td><td class="right"></td><td class="lineno"></td></tr>
-      <tr id="diff0023"><td></td></tr>
-      <tr><td class="lineno"></td><td class="lblock">       Figure 4: Example of NETCONF commit RPC with annotations</td><td> </td><td class="rblock">   <span class="insert">&lt;rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="1"</span></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="lblock"></td><td> </td><td class="rblock"><span class="insert">        xmlns:w3ctc="urn:ietf:params:xml:ns:netconf:w3ctc:1.0"</span></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="lblock"></td><td> </td><td class="rblock"><span class="insert">        xmlns:ext-txid=</span></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="lblock"></td><td> </td><td class="rblock"><span class="insert">          "urn:ietf:params:xml:ns:yang:ietf-external-transaction-id"</span></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="lblock"></td><td> </td><td class="rblock"><span class="insert">        w3ctc:traceparent=</span></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="lblock"></td><td> </td><td class="rblock"><span class="insert">          "00-4bf92f3577b34da6a3ce929d0e0e4736-00f067aa0ba902b7-01"</span></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="lblock"></td><td> </td><td class="rblock"><span class="insert">        ext-txid:client-id="controller-01"&gt;</span></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="lblock"></td><td> </td><td class="rblock"><span class="insert">     &lt;commit/&gt;</span></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="lblock"></td><td> </td><td class="rblock"><span class="insert">   &lt;/rpc&gt;</span></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="lblock"></td><td> </td><td class="rblock">                                                                         </td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="lblock"></td><td> </td><td class="rblock">          Figure 4: Example of NETCONF commit RPC with annotations</td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left"></td><td> </td><td class="right"></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left">   In Figure 4, we present an RPC annotated with the traceparent and the</td><td> </td><td class="right">   In Figure 4, we present an RPC annotated with the traceparent and the</td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left">   client-id.  The traceparent example is taken from</td><td> </td><td class="right">   client-id.  The traceparent example is taken from</td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left">   [I-D.ietf-netconf-trace-ctx-extension].  The client-id annotation is</td><td> </td><td class="right">   [I-D.ietf-netconf-trace-ctx-extension].  The client-id annotation is</td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left">   defined in our YANG module.  Here the client-id passed is</td><td> </td><td class="right">   defined in our YANG module.  Here the client-id passed is</td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left">   'controller-01'.</td><td> </td><td class="right">   'controller-01'.</td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left"></td><td> </td><td class="right"></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left">Acknowledgements</td><td> </td><td class="right">Acknowledgements</td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left"></td><td> </td><td class="right"></td><td class="lineno"></td></tr>
-      <tr><td class="lineno"></td><td class="left">   The authors would like to thank Mohamed Boucadair, Jan Linblad and</td><td> </td><td class="right">   The authors would like to thank Mohamed Boucadair, Jan Linblad and</td><td class="lineno"></td></tr>
 
      <tr><td></td><td class="left"></td><td> </td><td class="right"></td><td></td></tr>
-     <tr id="end" bgcolor="gray"><th colspan="5" align="center">&nbsp;End of changes. 23 change blocks.&nbsp;</th></tr>
-     <tr class="stats"><td></td><th><i>47 lines changed or deleted</i></th><th><i> </i></th><th><i>113 lines changed or added</i></th><td></td></tr>
+     <tr id="end" bgcolor="gray"><th colspan="5" align="center">&nbsp;End of changes. 14 change blocks.&nbsp;</th></tr>
+     <tr class="stats"><td></td><th><i>22 lines changed or deleted</i></th><th><i> </i></th><th><i>41 lines changed or added</i></th><td></td></tr>
      <tr><td colspan="5" align="center" class="small"><br/>This html diff was produced by rfcdiff 1.45. The latest version is available from <a href="http://www.tools.ietf.org/tools/rfcdiff/" >http://tools.ietf.org/tools/rfcdiff/</a> </td></tr>
    </table>
    </body>
